@@ -6,6 +6,9 @@ public class CharacterSwitcher : MonoBehaviour
     [SerializeField] private CharacterMovement[] characters;
     [SerializeField] private int startingCharacterIndex = 0;
 
+    [Header("Camera")]
+    [SerializeField] private CameraTargetSwitcher cameraTargetSwitcher;
+
     [Header("Input")]
     [SerializeField] private KeyCode switchKey = KeyCode.Tab;
 
@@ -13,7 +16,6 @@ public class CharacterSwitcher : MonoBehaviour
 
     public CharacterMovement ActiveCharacter =>
         characters[currentCharacterIndex];
-
 
     private void Awake()
     {
@@ -37,13 +39,11 @@ public class CharacterSwitcher : MonoBehaviour
         UpdateActiveCharacter();
     }
 
-
     private void Update()
     {
         if (Input.GetKeyDown(switchKey))
             SwitchCharacter();
     }
-
 
     private void SwitchCharacter()
     {
@@ -55,7 +55,6 @@ public class CharacterSwitcher : MonoBehaviour
         UpdateActiveCharacter();
     }
 
-
     private void UpdateActiveCharacter()
     {
         for (int i = 0; i < characters.Length; i++)
@@ -63,12 +62,27 @@ public class CharacterSwitcher : MonoBehaviour
             if (characters[i] == null)
                 continue;
 
-            bool shouldHaveControl =
-                i == currentCharacterIndex;
-
             characters[i].SetControlsEnabled(
-                shouldHaveControl
+                i == currentCharacterIndex
             );
         }
+
+        UpdateCameraTarget();
+    }
+
+    private void UpdateCameraTarget()
+    {
+        if (cameraTargetSwitcher == null)
+            return;
+
+        CharacterMovement activeCharacter =
+            characters[currentCharacterIndex];
+
+        if (activeCharacter == null)
+            return;
+
+        cameraTargetSwitcher.SetTarget(
+            activeCharacter.CameraTarget
+        );
     }
 }

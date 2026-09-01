@@ -4,6 +4,8 @@ using UnityEngine;
 public class CharacterMovement : MonoBehaviour
 {
     [Header("References")]
+    [SerializeField] private Transform cameraTransform;
+    [SerializeField] private Transform cameraTarget;
     [SerializeField] private Transform groundCheck;
 
     [Header("Movement")]
@@ -29,9 +31,25 @@ public class CharacterMovement : MonoBehaviour
 
     public bool ControlsEnabled => controlsEnabled;
 
+    public Transform CameraTarget =>
+        cameraTarget != null
+            ? cameraTarget
+            : transform;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+
+        if (cameraTransform == null)
+        {
+            Debug.LogError(
+                $"{name} necesita una referencia a la Main Camera.",
+                this
+            );
+
+            enabled = false;
+            return;
+        }
 
         if (groundCheck == null)
         {
@@ -76,11 +94,20 @@ public class CharacterMovement : MonoBehaviour
 
     private void Move()
     {
-        Vector3 moveDirection = new Vector3(
-            moveInput.x,
-            0f,
-            moveInput.y
-        );
+        Vector3 cameraForward = cameraTransform.forward;
+        Vector3 cameraRight = cameraTransform.right;
+
+        // Ignoramos la inclinación vertical de la cámara
+        cameraForward.y = 0f;
+        cameraRight.y = 0f;
+
+        cameraForward.Normalize();
+        cameraRight.Normalize();
+
+        // WASD relativo a la cámara
+        Vector3 moveDirection =
+            cameraForward * moveInput.y +
+            cameraRight * moveInput.x;
 
         if (moveDirection.sqrMagnitude > 1f)
             moveDirection.Normalize();
@@ -154,6 +181,8 @@ public class CharacterMovement : MonoBehaviour
         {
             Vector3 velocity = rb.linearVelocity;
 
+            // Frenamos el movimiento horizontal
+            // pero dejamos que siga actuando la gravedad.
             velocity.x = 0f;
             velocity.z = 0f;
 
