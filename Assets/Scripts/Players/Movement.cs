@@ -181,8 +181,7 @@ public class CharacterMovement : MonoBehaviour
         {
             Vector3 velocity = rb.linearVelocity;
 
-            // Frenamos el movimiento horizontal
-            // pero dejamos que siga actuando la gravedad.
+            // Frenamos el movimiento horizontal pero dejamos que siga actuando la gravedad.
             velocity.x = 0f;
             velocity.z = 0f;
 
