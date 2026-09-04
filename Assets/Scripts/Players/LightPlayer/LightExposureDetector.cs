@@ -72,8 +72,8 @@ public class LightExposureDetector : MonoBehaviour
             enabled = false;
             return;
         }
-
         // El radio del trigger sigue automaticamente el Range de la Light
+        rangeTrigger.isTrigger = true;
         rangeTrigger.radius = sourceLight.range;
     }
 
