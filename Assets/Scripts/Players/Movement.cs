@@ -27,7 +27,7 @@ public class CharacterMovement : MonoBehaviour
     private Vector2 moveInput;
     private bool jumpRequested;
     private bool isRunning;
-    private bool controlsEnabled;
+    private bool controlsEnabled = true;
 
     public bool ControlsEnabled => controlsEnabled;
 
@@ -39,6 +39,12 @@ public class CharacterMovement : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+
+        // Si no se asigna la cámara, busca la Main Camera por defecto
+        if (cameraTransform == null && Camera.main != null)
+        {
+            cameraTransform = Camera.main.transform;
+        }
 
         if (cameraTransform == null)
         {
@@ -59,7 +65,11 @@ public class CharacterMovement : MonoBehaviour
             );
 
             enabled = false;
+            return;
         }
+
+        // Aseguramos que los controles comiencen activos al iniciar la escena
+        controlsEnabled = true;
     }
 
     private void Update()
@@ -161,11 +171,12 @@ public class CharacterMovement : MonoBehaviour
 
     private bool IsGrounded()
     {
+        // CORREGIDO: Se cambia a Collide para que detecte las sombras incluso si son Triggers
         return Physics.CheckSphere(
             groundCheck.position,
             groundCheckRadius,
             groundMask,
-            QueryTriggerInteraction.Ignore
+            QueryTriggerInteraction.Collide
         );
     }
 
@@ -194,6 +205,7 @@ public class CharacterMovement : MonoBehaviour
         if (groundCheck == null)
             return;
 
+        Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(
             groundCheck.position,
             groundCheckRadius
