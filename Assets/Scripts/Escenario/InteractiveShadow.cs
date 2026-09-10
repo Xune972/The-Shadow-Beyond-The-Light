@@ -29,12 +29,21 @@ public class InteractiveShadow : MonoBehaviour
 
     private void Awake()
     {
-        // 1. Crear el objeto contenedor del collider de la sombra
+        // 1. Crear el objeto contenedor del collider de la sombra (CORREGIDO: Instanciación única)
         shadowObject = new GameObject("Shadow_Collider_" + gameObject.name);
+
+        int shadowLayer = LayerMask.NameToLayer("ShadowCollider");
+        if (shadowLayer != -1)
+        {
+            shadowObject.layer = shadowLayer;
+        }
+        else
+        {
+            Debug.LogWarning("La capa 'ShadowCollider' no existe en el Tag Manager. Asignando Default.", this);
+        }
+
         shadowCollider = shadowObject.AddComponent<MeshCollider>();
-        shadowCollider.convex = true; // Necesario para colliders dinámicos sin rigidbodies complejos
-        shadowObject = new GameObject("Shadow_Collider_" + gameObject.name);
-        shadowObject.layer = LayerMask.NameToLayer("ShadowCollider");
+        shadowCollider.convex = true; // Necesario para colisionadores dinámicos
 
         // 2. Extraer vértices únicos del MeshFilter del objeto
         MeshFilter meshFilter = GetComponent<MeshFilter>();
