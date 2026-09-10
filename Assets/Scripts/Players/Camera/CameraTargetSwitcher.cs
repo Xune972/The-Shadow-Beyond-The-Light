@@ -51,15 +51,16 @@ public class CameraTargetSwitcher : MonoBehaviour
             return;
 
         ReadMouseInput();
+        UpdatePivot();
     }
 
-    private void LateUpdate()
+    /* private void LateUpdate()
     {
         if (currentTarget == null)
             return;
 
         UpdatePivot();
-    }
+    }*/
 
     private void ReadMouseInput()
     {
