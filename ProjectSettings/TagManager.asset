@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ShadowPlayer
   - Ground
+  - HitBox
   layers:
   - Default
   - TransparentFX

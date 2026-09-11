@@ -1,23 +1,29 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 public class ExitDoor : MonoBehaviour
 {
+    [SerializeField] private ExitManager exitManager;
     [Header("Personaje permitido en la puerta")]
-    [SerializeField] private CharacterMovement[] selectedPlayer;
+    [SerializeField] private CharacterMovement[] selectedCharacter;
     private void OnTriggerEnter(Collider other)
     {
-        CharacterMovement player = other.GetComponent<CharacterMovement>();
-        if (player == null) return;
-        if(!IsSelectedPlayer (player)) return;
-        Debug.Log("El personaje llegó a la puerta", this);
+        if (other.CompareTag("HitBox"))
+        {
+            CharacterMovement character = other.GetComponentInParent<CharacterMovement>();
+            if (character == null) return;
+            if (!IsSelectedCharacter(character)) return;
+            Debug.Log("El personaje llegó a la puerta", this);
+            exitManager.NotifyArrive(character);
+        }
     }
 
-    private bool IsSelectedPlayer(CharacterMovement player)
+    private bool IsSelectedCharacter(CharacterMovement character)
     {
-        foreach (CharacterMovement p in selectedPlayer)
+        foreach (CharacterMovement c in selectedCharacter)
         {
-            if(p == player) return true;
+            if(c == character) return true;
         }
         return false;
     }    
