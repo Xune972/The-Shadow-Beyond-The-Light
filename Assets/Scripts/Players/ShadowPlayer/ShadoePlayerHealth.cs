@@ -91,6 +91,8 @@ public class ShadowPlayerHealth : MonoBehaviour
         }
     }
 
+
+
     private void UpdateMaterialAlpha()
     {
         if (characterMaterial == null) return;

@@ -1,173 +1,99 @@
-using System;
 using UnityEngine;
+using System;
+using System.Collections.Generic;
+
 
 public class LightExposureDetector : MonoBehaviour
 {
-    [Header("Referencias")]
-    [SerializeField] private Light sourceLight;
-    [SerializeField] private SphereCollider rangeTrigger;
+    [Header("Punto de detección")]
+    [Tooltip("Punto desde el cual se comprueba si el personaje está iluminado. Si se deja vacío, usa este mismo transform.")]
+    [SerializeField] private Transform puntoDeteccion;
 
-    [Header("Puntos de muestreo de la Sombra")]
-    [SerializeField] private Transform[] shadowSamplePoints;
+    [Header("Obstáculos")]
+    [Tooltip("Capas que bloquean la luz (paredes, obstáculos)")]
+    [SerializeField] private LayerMask capaObstaculos;
 
-    [Header("Tolerancia")]
-    [Range(0f, 1f)]
-    [SerializeField] private float exposureThreshold = 0.5f;
+    [Header("Actualización")]
+    [Tooltip("Cada cuántos segundos se refresca la lista de lámparas de la escena (por si aparecen o desaparecen nuevas)")]
+    [SerializeField] private float intervaloRefrescoLamparas = 2f;
 
-    [Header("Detección")]
-    [SerializeField] private string shadowTag = "Shadow";
-    [SerializeField] private LayerMask blockerMask;
-
-    [Header("Spot Light")]
-    [SerializeField] private bool checkSpotAngle = true;
-
-    [Header("Debug")]
-    [SerializeField] private bool drawDebugRays = true;
-
-    private bool shadowInsideRange;
-    private bool shadowExposed;
-
-    public bool ShadowExposed => shadowExposed;
     public event Action<bool> OnExposureChanged;
+    public bool IsExposed { get; private set; }
+
+    private List<LamparaSombra> lamparas = new List<LamparaSombra>();
+    private float temporizadorRefresco;
 
     private void Awake()
     {
-        if (sourceLight == null) sourceLight = GetComponent<Light>();
-        if (rangeTrigger == null) rangeTrigger = GetComponent<SphereCollider>();
+        if (puntoDeteccion == null) puntoDeteccion = transform;
+        RefrescarLamparas();
+    }
 
-        if (sourceLight == null || rangeTrigger == null)
+    private void Update()
+    {
+        temporizadorRefresco -= Time.deltaTime;
+        if (temporizadorRefresco <= 0f)
         {
-            Debug.LogError($"{name}: Necesita un componente Light y un SphereCollider.", this);
-            enabled = false;
-            return;
+            RefrescarLamparas();
+            temporizadorRefresco = intervaloRefrescoLamparas;
         }
 
-        rangeTrigger.isTrigger = true;
-        rangeTrigger.radius = sourceLight.range;
+        bool expuestoAhora = ComprobarSiEstaIluminado();
 
-        // Búsqueda de respaldo si no se asignaron los puntos manualmente en el Inspector
-        if (shadowSamplePoints == null || shadowSamplePoints.Length == 0)
+        if (expuestoAhora != IsExposed)
         {
-            GameObject shadowObj = GameObject.FindWithTag(shadowTag);
-            if (shadowObj != null)
+            IsExposed = expuestoAhora;
+            OnExposureChanged?.Invoke(IsExposed);
+        }
+    }
+
+    private void RefrescarLamparas()
+    {
+        lamparas.Clear();
+        lamparas.AddRange(FindObjectsByType<LamparaSombra>(FindObjectsSortMode.None));
+    }
+
+    private bool ComprobarSiEstaIluminado()
+    {
+        foreach (LamparaSombra lampara in lamparas)
+        {
+            if (lampara == null || !lampara.encendida) continue;
+
+            Light luz = lampara.GetComponent<Light>();
+            if (luz == null || !luz.enabled) continue;
+
+            if (EstaDentroDelAlcance(luz) && HayLineaDeVista(luz.transform.position))
             {
-                shadowSamplePoints = shadowObj.GetComponentsInChildren<Transform>();
+                return true;
             }
         }
+        return false;
     }
 
-    private void FixedUpdate()
+    private bool EstaDentroDelAlcance(Light luz)
     {
-        // Actualización dinámica del radio por si cambia el Range de la luz en juego
-        if (rangeTrigger != null && sourceLight != null && rangeTrigger.radius != sourceLight.range)
+        float distancia = Vector3.Distance(luz.transform.position, puntoDeteccion.position);
+        if (distancia > luz.range) return false;
+
+        if (luz.type == LightType.Spot)
         {
-            rangeTrigger.radius = sourceLight.range;
+            Vector3 direccionHaciaPersonaje = (puntoDeteccion.position - luz.transform.position).normalized;
+            float angulo = Vector3.Angle(luz.transform.forward, direccionHaciaPersonaje);
+            if (angulo > luz.spotAngle * 0.5f) return false;
         }
 
-        if (!shadowInsideRange)
+        return true;
+    }
+
+    private bool HayLineaDeVista(Vector3 origenLuz)
+    {
+        Vector3 direccion = puntoDeteccion.position - origenLuz;
+        float distancia = direccion.magnitude;
+
+        if (Physics.Raycast(origenLuz, direccion.normalized, out RaycastHit hit, distancia, capaObstaculos))
         {
-            SetExposureState(false);
-            return;
+            return false;
         }
-
-        CheckShadowExposure();
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (!other.CompareTag(shadowTag)) return;
-
-        shadowInsideRange = true;
-        Debug.Log("La Sombra entró al rango de la Luz.", this);
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (!other.CompareTag(shadowTag)) return;
-
-        shadowInsideRange = false;
-        SetExposureState(false);
-        Debug.Log("La Sombra salió del rango de la Luz.", this);
-    }
-
-    private void CheckShadowExposure()
-    {
-        if (shadowSamplePoints == null || shadowSamplePoints.Length == 0) return;
-
-        int illuminatedCount = 0;
-        int validPoints = 0;
-
-        foreach (Transform samplePoint in shadowSamplePoints)
-        {
-            if (samplePoint == null) continue;
-
-            validPoints++;
-
-            bool illuminated = IsPointIlluminated(samplePoint.position);
-            if (illuminated) illuminatedCount++;
-
-            if (drawDebugRays)
-            {
-                Debug.DrawLine(
-                    sourceLight.transform.position,
-                    samplePoint.position,
-                    illuminated ? Color.red : Color.green,
-                    Time.fixedDeltaTime
-                );
-            }
-        }
-
-        bool exposed = validPoints > 0 && ((float)illuminatedCount / validPoints) > exposureThreshold;
-        SetExposureState(exposed);
-    }
-
-    private bool IsPointIlluminated(Vector3 targetPoint)
-    {
-        Vector3 origin = sourceLight.transform.position;
-        Vector3 toPoint = targetPoint - origin;
-        float distance = toPoint.magnitude;
-
-        // 1. Chequeo de rango de distancia
-        if (distance > sourceLight.range) return false;
-        if (distance <= Mathf.Epsilon) return true;
-
-        Vector3 direction = toPoint / distance;
-
-        // 2. CORREGIDO: Chequeo de ángulo para Spot Lights
-        if (sourceLight.type == LightType.Spot && checkSpotAngle)
-        {
-            float angleToTarget = Vector3.Angle(sourceLight.transform.forward, direction);
-
-            // Si el punto está fuera del cono de la linterna, está a oscuras
-            if (angleToTarget > (sourceLight.spotAngle * 0.5f))
-            {
-                return false;
-            }
-        }
-
-        // 3. Chequeo de obstáculos por Raycast
-        bool blocked = Physics.Raycast(
-            origin,
-            direction,
-            distance,
-            blockerMask,
-            QueryTriggerInteraction.Ignore
-        );
-
-        return !blocked;
-    }
-
-    private void SetExposureState(bool exposed)
-    {
-        if (shadowExposed == exposed) return;
-
-        shadowExposed = exposed;
-
-        if (shadowExposed)
-            Debug.Log("SOMBRA ILUMINADA", this);
-        else
-            Debug.Log("SOMBRA PROTEGIDA", this);
-
-        OnExposureChanged?.Invoke(shadowExposed);
+        return true;
     }
 }
