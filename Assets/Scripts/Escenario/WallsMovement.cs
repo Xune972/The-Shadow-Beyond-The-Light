@@ -2,6 +2,12 @@ using UnityEngine;
 using System.Collections;
 public class WallsMovement : MonoBehaviour
 {
+    [Header("Color")]
+    public Color colorNormal = Color.black;
+    public Color colorAdvertencia = Color.red;
+
+    private Renderer[] renders;
+
     [Header("Movimiento")]
     [SerializeField] private float velocidad = 4f;
     [SerializeField] private float distanciaBajada = 42.7f;
@@ -11,11 +17,16 @@ public class WallsMovement : MonoBehaviour
 
     private Coroutine movimientoActual;
 
-    void Start()
+    void Awake()
     {
         posicionArriba = transform.position;
 
         posicionAbajo = posicionArriba + Vector3.down * distanciaBajada; 
+
+        renders = GetComponentsInChildren<Renderer>(); 
+
+        
+        
     }
 
     
@@ -30,6 +41,7 @@ public class WallsMovement : MonoBehaviour
     }
     public void Subir()
     {
+        PonerNormal();
         IniciarMovimiento(posicionArriba);
     }
 
@@ -53,5 +65,20 @@ public class WallsMovement : MonoBehaviour
         transform.position = destino;
         movimientoActual = null;
     }
-    
+    public void PonerRojo()
+    {
+        foreach (Renderer render in renders)
+        {
+            render.material.color = colorAdvertencia;
+        }
+    }
+
+    public void PonerNormal()
+    {
+        foreach (Renderer render in renders)
+        {
+            render.material.color = colorNormal;
+        }
+    }
+
 }
