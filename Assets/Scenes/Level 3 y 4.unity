@@ -862,7 +862,7 @@ GameObject:
   - component: {fileID: 233860316}
   m_Layer: 6
   m_Name: Boton Piso
-  m_TagString: Untagged
+  m_TagString: ShadowPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -876,7 +876,7 @@ Transform:
   m_GameObject: {fileID: 233860314}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7143124, z: -0, w: 0.69982696}
-  m_LocalPosition: {x: 6.095, y: 7.0999994, z: 15.697}
+  m_LocalPosition: {x: 6.98, y: 7.0999994, z: 15.72}
   m_LocalScale: {x: 1, y: 0.48519, z: 0.37767}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -895,7 +895,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PuertaCorrediza
   puerta: {fileID: 1819193619}
-  direccionMovimiento: {x: 0, y: 0, z: 18}
+  direccionMovimiento: {x: 0, y: 0, z: -18}
   velocidad: 3
   teclaInteraccion: 101
 --- !u!65 &233860317
@@ -993,7 +993,6 @@ GameObject:
   - component: {fileID: 246581969}
   - component: {fileID: 246581970}
   - component: {fileID: 246581973}
-  - component: {fileID: 246581968}
   m_Layer: 0
   m_Name: PlayerLight
   m_TagString: Player
@@ -1001,23 +1000,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &246581968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 246581967}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 177c16745e2501747868afc6e62cfa9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LightRangeDetector
-  puntoDeteccion: {fileID: 0}
-  capaObstaculos:
-    serializedVersion: 2
-    m_Bits: 0
-  intervaloRefrescoLamparas: 2
 --- !u!135 &246581969
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1537,7 +1519,7 @@ Transform:
   m_GameObject: {fileID: 301416355}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.87, y: -1.16, z: -31.23}
+  m_LocalPosition: {x: 14.66, y: 4.15, z: -47.44}
   m_LocalScale: {x: 1.1690218, y: 0.97329646, z: 1.2756068}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1686,15 +1668,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 301416355}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0362bf1c422c9b41879cf02aea5c1ca, type: 3}
+  m_Script: {fileID: 11500000, guid: 177c16745e2501747868afc6e62cfa9d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ShadowPlayerHealth
-  lightDetector: {fileID: 246581968}
-  maxHealth: 100
-  damagePerSecond: 20
-  healPerSecond: 25
-  characterRenderer: {fileID: 301416360}
-  killZone: {fileID: 1848741828}
+  m_EditorClassIdentifier: Assembly-CSharp::LightExposureDetector
+  puntoDeteccion: {fileID: 301416356}
+  capaObstaculos:
+    serializedVersion: 2
+    m_Bits: 64
+  intervaloRefrescoLuces: 2
 --- !u!114 &301416363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1707,7 +1688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0362bf1c422c9b41879cf02aea5c1ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShadowPlayerHealth
-  lightDetector: {fileID: 0}
+  lightDetector: {fileID: 301416362}
   maxHealth: 100
   damagePerSecond: 20
   healPerSecond: 20
@@ -2743,7 +2724,7 @@ Transform:
   m_GameObject: {fileID: 498250755}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.73, y: 2.6, z: 15.07}
+  m_LocalPosition: {x: 2.71, y: 2.6, z: 15.07}
   m_LocalScale: {x: 0.9935096, y: 1.2781188, z: 0.69977}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5325,7 +5306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShadowLightReactor
   lightsToWatch:
-  - {fileID: 246581968}
+  - {fileID: 0}
 --- !u!114 &806478410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9503,6 +9484,7 @@ GameObject:
   - component: {fileID: 1819193618}
   - component: {fileID: 1819193617}
   - component: {fileID: 1819193616}
+  - component: {fileID: 1819193620}
   m_Layer: 0
   m_Name: Piso corredizo
   m_TagString: Untagged
@@ -9603,6 +9585,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1510117022}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1819193620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819193615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b4c811e91dce9d4b9cf8a4b5ccf3672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PuertaCorrediza
+  puerta: {fileID: 0}
+  direccionMovimiento: {x: 2, y: 0, z: 0}
+  velocidad: 3
+  teclaInteraccion: 101
 --- !u!1 &1848741823
 GameObject:
   m_ObjectHideFlags: 0
