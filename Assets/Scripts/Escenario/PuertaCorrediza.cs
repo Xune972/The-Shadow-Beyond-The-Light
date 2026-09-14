@@ -44,17 +44,25 @@ public class PuertaCorrediza : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("HitBox"))
         {
-            jugadorCerca = true;
+            CharacterMovement character = other.GetComponentInParent<CharacterMovement>();
+            if (character != null)
+            {
+                jugadorCerca = true;
+            }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("HitBox"))
         {
-            jugadorCerca = false;
+            CharacterMovement character = other.GetComponentInParent<CharacterMovement>();
+            if (character != null)
+            {
+                jugadorCerca = false;
+            }
         }
     }
 }

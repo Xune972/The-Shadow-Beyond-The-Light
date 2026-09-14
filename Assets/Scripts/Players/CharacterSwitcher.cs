@@ -13,6 +13,7 @@ public class CharacterSwitcher : MonoBehaviour
     [SerializeField] private KeyCode switchKey = KeyCode.Tab;
 
     private int currentCharacterIndex;
+    public int TotalCharacters => characters.Length;
 
     public CharacterMovement ActiveCharacter =>
         characters[currentCharacterIndex];
@@ -47,10 +48,13 @@ public class CharacterSwitcher : MonoBehaviour
 
     private void SwitchCharacter()
     {
-        currentCharacterIndex++;
-
-        if (currentCharacterIndex >= characters.Length)
-            currentCharacterIndex = 0;
+        int trys = 0;
+        do
+        {
+            currentCharacterIndex = (currentCharacterIndex + 1) % characters.Length;
+            trys++;
+        }
+        while (!characters[currentCharacterIndex].gameObject.activeSelf); // Busca un pj activo para hacer el cambio
 
         UpdateActiveCharacter();
     }
@@ -84,5 +88,31 @@ public class CharacterSwitcher : MonoBehaviour
         cameraTargetSwitcher.SetTarget(
             activeCharacter.CameraTarget
         );
+    }
+
+    public void CharacterArrivedExit(CharacterMovement character, bool disableCharacter)
+    {
+        if (character == ActiveCharacter)
+        {
+            SwitchToOther(character);
+        }
+        character.SetControlsEnabled( false );
+        if (disableCharacter)
+        {
+            character.gameObject.SetActive(false);
+        }
+    }
+
+    private void SwitchToOther(CharacterMovement characterLeave) // Detecta al personaje que no fue a la puerta para seleccionarlo
+    {
+        for (int i = 0; i < characters.Length; i++)
+        {
+            if (characters[i] != null && characters[i] != characterLeave && characters[i].gameObject.activeSelf)
+            {
+                currentCharacterIndex = i;
+                UpdateActiveCharacter();
+                return;
+            }
+        }
     }
 }
