@@ -1813,8 +1813,19 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 64
-  intervaloRefrescoLuces: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.6
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &435488551
 GameObject:
   m_ObjectHideFlags: 0
@@ -2715,6 +2726,64 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d4b7a109281872478d445cefded976b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ExitDoor
+  exitManager: {fileID: 1053626943}
+  selectedCharacter:
+  - {fileID: 246581971}
+--- !u!1 &486438384
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 486438385}
+  - component: {fileID: 486438386}
+  m_Layer: 0
+  m_Name: HitBoxL
+  m_TagString: HitBox
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &486438385
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 486438384}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 37.257874, y: 2.8799999, z: 14.792759}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 246581972}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &486438386
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 486438384}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.6
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &496089308
 GameObject:
   m_ObjectHideFlags: 0
@@ -6014,6 +6083,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ef7237cbf7beab43a1cf99af50db872, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  characterSwitcher: {fileID: 0}
+  nextEscene: Level 5
+  disableCharacter: 1
+  mesajeForCharacter: {fileID: 0}
 --- !u!4 &1053626944
 Transform:
   m_ObjectHideFlags: 0
@@ -7902,13 +7975,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1254134360}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b4c811e91dce9d4b9cf8a4b5ccf3672, type: 3}
+  m_Script: {fileID: 11500000, guid: 0d4b7a109281872478d445cefded976b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ExitDoor
-  puerta: {fileID: 0}
-  direccionMovimiento: {x: 2, y: 0, z: 0}
-  velocidad: 3
-  teclaInteraccion: 101
+  exitManager: {fileID: 1053626943}
+  selectedCharacter:
+  - {fileID: 301416357}
 --- !u!1 &1254244009
 GameObject:
   m_ObjectHideFlags: 0
