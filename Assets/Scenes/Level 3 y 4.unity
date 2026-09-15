@@ -1768,7 +1768,7 @@ MonoBehaviour:
   puntoDeteccion: {fileID: 0}
   capaObstaculos:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   intervaloRefrescoLuces: 2
 --- !u!1 &435488551
 GameObject:
@@ -2670,9 +2670,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d4b7a109281872478d445cefded976b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ExitDoor
-  exitManager: {fileID: 1053626943}
-  selectedCharacter:
-  - {fileID: 246581971}
 --- !u!1 &496089308
 GameObject:
   m_ObjectHideFlags: 0
@@ -6060,10 +6057,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ef7237cbf7beab43a1cf99af50db872, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  characterSwitcher: {fileID: 806478411}
-  nextEscene: Level 5
-  disableCharacter: 0
-  mesajeForCharacter: {fileID: 0}
 --- !u!4 &1053626944
 Transform:
   m_ObjectHideFlags: 0
@@ -7952,12 +7945,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1254134360}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d4b7a109281872478d445cefded976b, type: 3}
+  m_Script: {fileID: 11500000, guid: 0b4c811e91dce9d4b9cf8a4b5ccf3672, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ExitDoor
-  exitManager: {fileID: 1053626943}
-  selectedCharacter:
-  - {fileID: 301416357}
+  puerta: {fileID: 0}
+  direccionMovimiento: {x: 2, y: 0, z: 0}
+  velocidad: 3
+  teclaInteraccion: 101
 --- !u!1 &1254244009
 GameObject:
   m_ObjectHideFlags: 0
