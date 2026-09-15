@@ -2,7 +2,7 @@ using Unity.VectorGraphics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class MainMenu : MonoBehaviour
 {
     public GameObject mainMenu;
 
