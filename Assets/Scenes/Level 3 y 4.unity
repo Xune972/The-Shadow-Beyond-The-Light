@@ -3184,7 +3184,7 @@ MonoBehaviour:
   lightTransform: {fileID: 338176184}
   targetLayerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   shadowThickness: 0.5
   updateInterval: 0.05
 --- !u!64 &311573247
@@ -9356,7 +9356,7 @@ MonoBehaviour:
   lightTransform: {fileID: 338176184}
   targetLayerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   shadowThickness: 0.5
   updateInterval: 0.05
 --- !u!64 &1872334514
