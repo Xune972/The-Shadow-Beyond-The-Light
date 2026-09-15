@@ -11,9 +11,24 @@ public class WallsController : MonoBehaviour
     [Header("Tiempos")]
     public float tiempoRojo = 1.5f;
     public float tiempoEntreMovimientos = 11f;
+
+    private bool activo = false;
+
+    public void ActivarParedes()
+    {
+        
+        if (activo)
+        {
+            return;
+        }
+
+        activo = true;
+
+        StartCoroutine(CicloParedes());
+    }
     void Start()
     {
-        StartCoroutine(CicloParedes());
+        
     }
 
    

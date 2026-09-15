@@ -2,7 +2,6 @@ using UnityEngine;
 using System;
 using System.Collections.Generic;
 
-
 public class LightExposureDetector : MonoBehaviour
 {
     [Header("Punto de detección")]
@@ -14,19 +13,19 @@ public class LightExposureDetector : MonoBehaviour
     [SerializeField] private LayerMask capaObstaculos;
 
     [Header("Actualización")]
-    [Tooltip("Cada cuántos segundos se refresca la lista de lámparas de la escena (por si aparecen o desaparecen nuevas)")]
-    [SerializeField] private float intervaloRefrescoLamparas = 2f;
+    [Tooltip("Cada cuántos segundos se refresca la lista de luces de la escena (por si aparecen o desaparecen nuevas)")]
+    [SerializeField] private float intervaloRefrescoLuces = 2f;
 
     public event Action<bool> OnExposureChanged;
     public bool IsExposed { get; private set; }
 
-    private List<LamparaSombra> lamparas = new List<LamparaSombra>();
+    private List<Light> luces = new List<Light>();
     private float temporizadorRefresco;
 
     private void Awake()
     {
         if (puntoDeteccion == null) puntoDeteccion = transform;
-        RefrescarLamparas();
+        RefrescarLuces();
     }
 
     private void Update()
@@ -34,8 +33,8 @@ public class LightExposureDetector : MonoBehaviour
         temporizadorRefresco -= Time.deltaTime;
         if (temporizadorRefresco <= 0f)
         {
-            RefrescarLamparas();
-            temporizadorRefresco = intervaloRefrescoLamparas;
+            RefrescarLuces();
+            temporizadorRefresco = intervaloRefrescoLuces;
         }
 
         bool expuestoAhora = ComprobarSiEstaIluminado();
@@ -47,19 +46,16 @@ public class LightExposureDetector : MonoBehaviour
         }
     }
 
-    private void RefrescarLamparas()
+    private void RefrescarLuces()
     {
-        lamparas.Clear();
-        lamparas.AddRange(FindObjectsByType<LamparaSombra>(FindObjectsSortMode.None));
+        luces.Clear();
+        luces.AddRange(FindObjectsByType<Light>(FindObjectsSortMode.None));
     }
 
     private bool ComprobarSiEstaIluminado()
     {
-        foreach (LamparaSombra lampara in lamparas)
+        foreach (Light luz in luces)
         {
-            if (lampara == null || !lampara.encendida) continue;
-
-            Light luz = lampara.GetComponent<Light>();
             if (luz == null || !luz.enabled) continue;
 
             if (EstaDentroDelAlcance(luz) && HayLineaDeVista(luz.transform.position))
