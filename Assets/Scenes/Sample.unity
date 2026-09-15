@@ -975,18 +975,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 177c16745e2501747868afc6e62cfa9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LightRangeDetector
-  sourceLight: {fileID: 577927381}
-  rangeTrigger: {fileID: 577927382}
-  shadowSamplePoints:
-  - {fileID: 1489161466}
-  - {fileID: 304050698}
-  exposureThreshold: 0.5
-  shadowTag: ShadowPlayer
-  blockerMask:
+  puntoDeteccion: {fileID: 2002899411}
+  capaObstaculos:
     serializedVersion: 2
-    m_Bits: 64
-  checkSpotAngle: 1
-  drawDebugRays: 1
+    m_Bits: 0
+  intervaloRefrescoLamparas: 2
 --- !u!114 &577927380
 MonoBehaviour:
   m_ObjectHideFlags: 0
