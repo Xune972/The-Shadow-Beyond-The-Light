@@ -1199,6 +1199,7 @@ Transform:
   m_Children:
   - {fileID: 502284181}
   - {fileID: 486438385}
+  - {fileID: 1353057906}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &246581973
@@ -1765,12 +1766,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 177c16745e2501747868afc6e62cfa9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShadowPlayerHealth
-  lightDetector: {fileID: 0}
-  maxHealth: 100
-  damagePerSecond: 20
-  healPerSecond: 20
-  characterRenderer: {fileID: 301416360}
-  killZone: {fileID: 1848741828}
+  puntoDeteccion: {fileID: 0}
+  capaObstaculos:
+    serializedVersion: 2
+    m_Bits: 0
+  intervaloRefrescoLuces: 2
 --- !u!1 &354048712
 GameObject:
   m_ObjectHideFlags: 0
@@ -4110,25 +4110,6 @@ MonoBehaviour:
     m_Bits: 64
   shadowThickness: 0.5
   updateInterval: 0.05
---- !u!1 &617598156
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 5507190191419739331, guid: 3c8436d0b08c0854f9b3f6cff25cf800, type: 3}
-  m_PrefabInstance: {fileID: 8435782037723893956}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 803685412}
-  - component: {fileID: 803685415}
-  - component: {fileID: 803685414}
-  - component: {fileID: 803685413}
-  m_Layer: 0
-  m_Name: Vidrio
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &632330889
 GameObject:
   m_ObjectHideFlags: 0
@@ -5384,11 +5365,6 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
---- !u!4 &803685412 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 298919223398185027, guid: 3c8436d0b08c0854f9b3f6cff25cf800, type: 3}
-  m_PrefabInstance: {fileID: 8435782037723893956}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &806478408
 GameObject:
   m_ObjectHideFlags: 0
@@ -8868,7 +8844,6 @@ Transform:
   - {fileID: 558227141}
   - {fileID: 257686107}
   - {fileID: 1074724881}
-  - {fileID: 803685412}
   - {fileID: 568661764}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11153,63 +11128,6 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
---- !u!1001 &8435782037723893956
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1510117022}
-    m_Modifications:
-    - target: {fileID: 298919223398185027, guid: 3c8436d0b08c0854f9b3f6cff25cf800, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.5493
-      objectReference: {fileID: 0}
-    - target: {fileID: 298919223398185027, guid: 3c8436d0b08c0854f9b3f6cff25cf800, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.4962
-      objectReference: {fileID: 0}
-    - target: {fileID: 298919223398185027, guid: 3c8436d0b08c0854f9b3f6cff25cf800, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -8.7481
-      objectReference: {fileID: 0}
-    - target: {fileID: 298919223398185027, guid: 3c8436d0b08c0854f9b3f6cff25cf800, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 298919223398185027, guid: 3c8436d0b08c0854f9b3f6cff25cf800, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 298919223398185027, guid: 3c8436d0b08c0854f9b3f6cff25cf800, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 298919223398185027, guid: 3c8436d0b08c0854f9b3f6cff25cf800, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 298919223398185027, guid: 3c8436d0b08c0854f9b3f6cff25cf800, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 298919223398185027, guid: 3c8436d0b08c0854f9b3f6cff25cf800, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 298919223398185027, guid: 3c8436d0b08c0854f9b3f6cff25cf800, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5507190191419739331, guid: 3c8436d0b08c0854f9b3f6cff25cf800, type: 3}
-      propertyPath: m_Name
-      value: Vidrio
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 3c8436d0b08c0854f9b3f6cff25cf800, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
