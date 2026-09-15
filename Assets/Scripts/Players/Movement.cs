@@ -69,7 +69,7 @@ public class CharacterMovement : MonoBehaviour
         }
 
         // Aseguramos que los controles comiencen activos al iniciar la escena
-        controlsEnabled = true;
+        //controlsEnabled = true;
     }
 
     private void Update()
