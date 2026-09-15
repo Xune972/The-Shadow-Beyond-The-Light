@@ -1,4 +1,6 @@
+using Unity.VectorGraphics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NewMonoBehaviourScript : MonoBehaviour
 {
@@ -23,5 +25,8 @@ public class NewMonoBehaviourScript : MonoBehaviour
         Application.Quit();
     }
 
-
+   public void PlayGame()
+    {
+        SceneManager.LoadScene("Level 1");
+    }
 }
