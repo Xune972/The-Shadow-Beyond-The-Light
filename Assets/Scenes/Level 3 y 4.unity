@@ -7325,7 +7325,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -9203,7 +9203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   characterSwitcher: {fileID: 1098878723}
   nextEscene: Level 5
-  disableCharacter: 1
+  disableCharacter: 0
   mesajeForCharacter: {fileID: 0}
 --- !u!4 &1887270662
 Transform:
