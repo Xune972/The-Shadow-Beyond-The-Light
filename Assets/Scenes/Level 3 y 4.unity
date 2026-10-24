@@ -10702,7 +10702,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7407811212762260166, guid: dc8c1ecef5af0d641b0b8e1ba10c07e2, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: ShadowPlayer
       objectReference: {fileID: 0}
     - target: {fileID: 8610869300345659815, guid: dc8c1ecef5af0d641b0b8e1ba10c07e2, type: 3}
       propertyPath: cameraTransform
