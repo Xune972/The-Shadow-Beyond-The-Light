@@ -4429,7 +4429,7 @@ MonoBehaviour:
   velocidad: 2
   teclaInteraccion: 101
   puedeAlternar: 1
-  tagJugadorPermitido: Playershadow
+  tagJugadorPermitido: ShadowPlayer
 --- !u!1 &747929760
 GameObject:
   m_ObjectHideFlags: 0
