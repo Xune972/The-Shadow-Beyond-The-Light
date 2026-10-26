@@ -14,7 +14,9 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private float rotationSpeed = 12f;
 
     [Header("Jump")]
-    [SerializeField] private float jumpForce = 6f;
+    [SerializeField] private float jumpForce = 4.5f;
+    [SerializeField] private float riseMultiplier = 1.5f;
+    [SerializeField] private float fallMultiplier = 2.5f;
     [SerializeField] private float groundCheckRadius = 0.25f;
     [SerializeField] private LayerMask groundMask;
 
@@ -87,6 +89,7 @@ public class CharacterMovement : MonoBehaviour
 
         Move();
         HandleJump();
+        ApplyBetterGravity();
     }
 
     private void ReadInput()
@@ -210,5 +213,23 @@ public class CharacterMovement : MonoBehaviour
             groundCheck.position,
             groundCheckRadius
         );
+    }
+
+    private void ApplyBetterGravity()
+    {
+        if (rb.linearVelocity.y < 0f)
+        {
+            rb.AddForce(
+                Physics.gravity * (fallMultiplier - 1f),
+                ForceMode.Acceleration
+            );
+        }
+        else if (rb.linearVelocity.y > 0f)
+        {
+            rb.AddForce(
+                Physics.gravity * (riseMultiplier - 1f),
+                ForceMode.Acceleration
+            );
+        }
     }
 }
