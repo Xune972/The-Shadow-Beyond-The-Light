@@ -4604,7 +4604,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 40124040}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6115,7 +6115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d4b7a109281872478d445cefded976b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  exitManager: {fileID: 171177777}
+  exitManager: {fileID: 0}
   selectedCharacter:
   - {fileID: 702087871}
 --- !u!65 &619830322
@@ -10865,7 +10865,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51bc30543e7c157449b362129a389c57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::No
-  Note: {fileID: 40124036}
+  Note: {fileID: 0}
 --- !u!65 &1130101677
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10956,8 +10956,7 @@ Transform:
   m_LocalPosition: {x: -11.56571, y: 44.61084, z: 18.5723}
   m_LocalScale: {x: 1, y: 1, z: 0.876027}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 40124040}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1141005048
@@ -13826,7 +13825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51bc30543e7c157449b362129a389c57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::No
-  Note: {fileID: 2117794568}
+  Note: {fileID: 0}
 --- !u!65 &1391579783
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13917,8 +13916,7 @@ Transform:
   m_LocalPosition: {x: 40.16, y: -2.43, z: 13.72}
   m_LocalScale: {x: 1, y: 0.9942, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2117794572}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1391579787
@@ -13936,7 +13934,7 @@ MonoBehaviour:
   noteAudio: {fileID: 8300000, guid: 6591d5d784b743c4bbf3635b811c078f, type: 3}
   stopAudioOnClose: 1
   playOnlyOnce: 0
-  interactPrompt: {fileID: 2117794568}
+  interactPrompt: {fileID: 0}
   notePanel: {fileID: 1940543931}
   interactKey: 114
   playerTag: ShadowPlayer
@@ -16512,7 +16510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d4b7a109281872478d445cefded976b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  exitManager: {fileID: 171177777}
+  exitManager: {fileID: 0}
   selectedCharacter:
   - {fileID: 1573091750}
 --- !u!65 &1563079993
@@ -16946,7 +16944,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1584443303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17023,7 +17021,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1335359650}
-  m_Father: {fileID: 71743843}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -20043,7 +20041,7 @@ RectTransform:
   m_LocalScale: {x: 4.80641, y: 4.6620255, z: 0.98695}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2117794572}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -21637,3 +21635,11 @@ SceneRoots:
   - {fileID: 2107666324}
   - {fileID: 1447312748}
   - {fileID: 248031541}
+  - {fileID: 485520380}
+  - {fileID: 619830325}
+  - {fileID: 1130101680}
+  - {fileID: 1391579786}
+  - {fileID: 1563079996}
+  - {fileID: 1584443306}
+  - {fileID: 1940543932}
+  - {fileID: 2012494131}
