@@ -3,7 +3,7 @@ using System.Collections;
 public class WallsMovement : MonoBehaviour
 {
     [Header("Color")]
-    public Color colorNormal = Color.black;
+    public Color colorNormal = Color.white;
     public Color colorAdvertencia = Color.red;
 
     private Renderer[] renders;
