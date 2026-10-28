@@ -30,7 +30,7 @@ public class KillZone : MonoBehaviour
         Rigidbody rb = player.GetComponent<Rigidbody>();
         CharacterMovement movement = player.GetComponent<CharacterMovement>();
 
-        // 1. Bloquear controles y físicas
+        // 1. Bloquear controles
         if (movement != null)
         {
             movement.SetControlsEnabled(false);
@@ -38,9 +38,11 @@ public class KillZone : MonoBehaviour
 
         if (rb != null)
         {
-            rb.isKinematic = true;
+            // Primero limpiamos la velocidad (todavía NO kinemático)
             rb.linearVelocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
+            // Recién ahora lo pasamos a kinemático
+            rb.isKinematic = true;
         }
 
         // 2. Mover al punto de reaparición
@@ -53,12 +55,12 @@ public class KillZone : MonoBehaviour
         // 3. Esperar al ciclo de físicas
         yield return new WaitForFixedUpdate();
 
-        // 4. Limpiar inercia remanente y reactivar físicas
+        // 4. Reactivar físicas y recién después limpiar inercia remanente
         if (rb != null)
         {
+            rb.isKinematic = false;
             rb.linearVelocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
-            rb.isKinematic = false;
         }
 
         if (movement != null)
