@@ -6473,6 +6473,7 @@ GameObject:
   - component: {fileID: 619830323}
   - component: {fileID: 619830322}
   - component: {fileID: 619830321}
+  - component: {fileID: 619830326}
   m_Layer: 6
   m_Name: ExitL
   m_TagString: Untagged
@@ -6588,6 +6589,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 90, y: 180, z: 0}
+--- !u!114 &619830326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619830320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &620961507
 GameObject:
   m_ObjectHideFlags: 0
@@ -7424,7 +7445,7 @@ SphereCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -7496,7 +7517,7 @@ CapsuleCollider:
   m_Material: {fileID: 13400000, guid: a994377b43510a34288f26ecb14aa2e6, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -7575,7 +7596,7 @@ Transform:
   m_GameObject: {fileID: 702087866}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.83, y: 1, z: 31.15}
+  m_LocalPosition: {x: 82.51, y: 43.16, z: 18.88}
   m_LocalScale: {x: 2.8259897, y: 2.8259897, z: 2.8259897}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12374,8 +12395,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e155c413b76fb074abfe413783fb4a3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RobotPatrol
-  destroyRobotsOnCollision: 1
-  deathEffect: {fileID: 0}
+  playerHitboxLayer:
+    serializedVersion: 2
+    m_Bits: 512
   agent: {fileID: 0}
   patrolRadius: 20
   patrolWaitTime: 1
@@ -16117,8 +16139,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e155c413b76fb074abfe413783fb4a3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RobotPatrol
-  destroyRobotsOnCollision: 1
-  deathEffect: {fileID: 0}
+  playerHitboxLayer:
+    serializedVersion: 2
+    m_Bits: 512
   agent: {fileID: 0}
   patrolRadius: 20
   patrolWaitTime: 1
@@ -17899,7 +17922,7 @@ CapsuleCollider:
   m_Material: {fileID: 13400000, guid: a994377b43510a34288f26ecb14aa2e6, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -17978,7 +18001,7 @@ Transform:
   m_GameObject: {fileID: 1573091749}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 63.2, y: -0.77, z: 33.9}
+  m_LocalPosition: {x: 55.39, y: 44.14, z: 22.24}
   m_LocalScale: {x: 2.82599, y: 2.82599, z: 2.82599}
   m_ConstrainProportionsScale: 0
   m_Children:
