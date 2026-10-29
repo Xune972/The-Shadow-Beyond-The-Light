@@ -14,6 +14,7 @@ public class RobotPatrol : MonoBehaviour
 
     [Header("Collision")]  
     private bool isDestroyed = false;
+    public LayerMask playerHitboxLayer;
 
     [Header("Movement")]
     public NavMeshAgent agent;
@@ -293,21 +294,39 @@ public class RobotPatrol : MonoBehaviour
         Gizmos.DrawRay(origin, right * visionDistance);
     }
 
+
     private void OnTriggerEnter(Collider other)
     {
+
+        Debug.Log(
+    "Robot detectó: " + other.name +
+    " | Layer: " + LayerMask.LayerToName(other.gameObject.layer) +
+    " | Tag: " + other.tag);
+
         if (isDestroyed)
             return;
 
-        
-        if (other.CompareTag("Player") ||
-            other.CompareTag("ShadowPlayer"))
-        {
-            KillPlayer();
+        // Comprueba si el collider pertenece al Layer de las hitboxes.
+        int layerBit = 1 << other.gameObject.layer;
+
+        if ((playerHitboxLayer.value & layerBit) == 0)
             return;
+
+        // Busca el personaje al que pertenece el collider.
+        Transform playerRoot = other.transform;
+
+        while (playerRoot != null &&
+               !playerRoot.CompareTag("Player") &&
+               !playerRoot.CompareTag("ShadowPlayer"))
+        {
+            playerRoot = playerRoot.parent;
         }
 
-       
-        
+        if (playerRoot != null)
+        {
+            Debug.Log("¡Robot tocó al personaje: " + playerRoot.name + "!");
+            KillPlayer();
+        }
     }
 
     private void KillPlayer()
@@ -315,5 +334,5 @@ public class RobotPatrol : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    
+
 }
