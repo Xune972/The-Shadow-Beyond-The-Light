@@ -1,6 +1,7 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
-using TMPro;
+using UnityEngine.SceneManagement;
 
 public class RobotPatrol : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class RobotPatrol : MonoBehaviour
         Alerta,
         Chase
     }
+
+    [Header("Collision")]  
+    private bool isDestroyed = false;
 
     [Header("Movement")]
     public NavMeshAgent agent;
@@ -288,4 +292,28 @@ public class RobotPatrol : MonoBehaviour
         Gizmos.DrawRay(origin, left * visionDistance);
         Gizmos.DrawRay(origin, right * visionDistance);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (isDestroyed)
+            return;
+
+        
+        if (other.CompareTag("Player") ||
+            other.CompareTag("ShadowPlayer"))
+        {
+            KillPlayer();
+            return;
+        }
+
+       
+        
+    }
+
+    private void KillPlayer()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    
 }
