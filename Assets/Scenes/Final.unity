@@ -244,7 +244,6 @@ GameObject:
   - component: {fileID: 82917338}
   - component: {fileID: 82917337}
   - component: {fileID: 82917336}
-  - component: {fileID: 82917339}
   m_Layer: 0
   m_Name: Terrain
   m_TagString: Untagged
@@ -327,20 +326,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!182 &82917339
-WindZone:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 82917335}
-  m_Enabled: 0
-  m_Mode: 0
-  m_Radius: 20
-  m_WindMain: 1
-  m_WindTurbulence: 2
-  m_WindPulseMagnitude: 0.5
-  m_WindPulseFrequency: 0.01
 --- !u!1001 &197992514
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1112,7 +1097,7 @@ Transform:
   m_GameObject: {fileID: 1207463801}
   serializedVersion: 2
   m_LocalRotation: {x: 0.025948342, y: -0, z: -0, w: 0.99966335}
-  m_LocalPosition: {x: 204.1, y: 4.3, z: 213.8}
+  m_LocalPosition: {x: 204.1, y: 7, z: 156}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
