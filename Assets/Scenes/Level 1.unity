@@ -3426,7 +3426,7 @@ MonoBehaviour:
   walkSpeed: 5
   runSpeed: 8
   rotationSpeed: 12
-  jumpForce: 6
+  jumpForce: 7
   riseMultiplier: 1.5
   fallMultiplier: 2.5
   groundCheckRadius: 0.25
@@ -3484,8 +3484,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShadowPlayerHealth
   lightDetector: {fileID: 759257790}
   maxHealth: 100
-  damagePerSecond: 10
-  healPerSecond: 20
+  damagePerSecond: 20
+  healPerSecond: 0
   characterRenderer: {fileID: 759257794}
   killZone: {fileID: 1309577982}
 --- !u!54 &759257792
@@ -8859,7 +8859,7 @@ MonoBehaviour:
   walkSpeed: 5
   runSpeed: 8
   rotationSpeed: 12
-  jumpForce: 6
+  jumpForce: 7
   riseMultiplier: 1.5
   fallMultiplier: 2.5
   groundCheckRadius: 0.25
@@ -11720,7 +11720,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Audio Manager
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1340964151396170043, guid: 9109b8b22da4d254fac282bca658c990, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

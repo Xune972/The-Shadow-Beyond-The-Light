@@ -11547,6 +11547,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1709641809}
     m_Modifications:
+    - target: {fileID: 530404560183653886, guid: 53ab8cdcf173c734e8ae9f73c6733dc3, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     - target: {fileID: 936472424738445496, guid: 53ab8cdcf173c734e8ae9f73c6733dc3, type: 3}
       propertyPath: m_Name
       value: PlayerLight
@@ -11620,6 +11624,10 @@ PrefabInstance:
       propertyPath: orbitPivot
       value: 
       objectReference: {fileID: 418676011}
+    - target: {fileID: 2956634822180013241, guid: dc8c1ecef5af0d641b0b8e1ba10c07e2, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     - target: {fileID: 3851166226648516507, guid: dc8c1ecef5af0d641b0b8e1ba10c07e2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 23.63903
