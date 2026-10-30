@@ -306,13 +306,13 @@ public class RobotPatrol : MonoBehaviour
         if (isDestroyed)
             return;
 
-        // Comprueba si el collider pertenece al Layer de las hitboxes.
+       
         int layerBit = 1 << other.gameObject.layer;
 
         if ((playerHitboxLayer.value & layerBit) == 0)
             return;
 
-        // Busca el personaje al que pertenece el collider.
+        
         Transform playerRoot = other.transform;
 
         while (playerRoot != null &&
