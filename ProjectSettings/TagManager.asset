@@ -8,7 +8,6 @@ TagManager:
   - Ground
   - HitBox
   - Shadowplayer
-  - Robot
   layers:
   - Default
   - TransparentFX
@@ -19,7 +18,7 @@ TagManager:
   - Obstacles
   - ShadowCollider
   - Wall
-  - PersonajeMuerte
+  - 
   - 
   - 
   - 

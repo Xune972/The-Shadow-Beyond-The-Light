@@ -1,338 +1,111 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.SceneManagement;
 
+[RequireComponent(typeof(NavMeshAgent))]
 public class RobotPatrol : MonoBehaviour
 {
-    private enum State
-    {
-        Patrol,
-        Alerta,
-        Chase
-    }
+    [Header("Configuracion patrulla")]
+    [SerializeField] private float radioPatrulla = 15f;
+    [SerializeField] private float tiempoEspera = 2f;
+    [SerializeField] private float distanciaLlegada = 1f;
 
-    [Header("Collision")]  
-    private bool isDestroyed = false;
-    public LayerMask playerHitboxLayer;
+    [Header("Busqueda de destinos")]
+    [SerializeField] private int intentosMaximos = 30;
+    [SerializeField] private float distanciaMuestreo = 2f;
 
-    [Header("Movement")]
-    public NavMeshAgent agent;
-    public float patrolRadius = 15f;
-    public float patrolWaitTime = 1f;
-
-    [Header("Vision")]
-    public Transform visionPoint;
-    public float visionDistance = 12f;
-    [Range(0f, 360f)]
-    public float visionAngle = 90f;
-    public LayerMask obstacleMask;
-    public float detectionInterval = 0.15f;
-
-    [Header("Eyes")]
-    public Renderer[] eyeRenderers;
-    public Light[] eyeLights;
-    public Color alertColor = Color.red;
-
-    [Header("Alerta")]
-    
-    public AudioSource audioSource;
-    public AudioClip detectedClip;
-    public float alertDuration = 1f;
-
-    private State currentState = State.Patrol;
-    private Transform target;
-    private float alertTimer;
-    private float patrolTimer;
-    private float detectionTimer;
+    private NavMeshAgent agente;
+    private float temporizador;
+    private bool esperando;
 
     private void Start()
     {
-        if (agent == null)
-            agent = GetComponent<NavMeshAgent>();
+        agente = GetComponent<NavMeshAgent>();
 
-        
+        agente.stoppingDistance = distanciaLlegada;
 
-        if (agent == null || !agent.isOnNavMesh)
-        {
-            Debug.LogError(
-                "RobotEnemyAI: falta el NavMeshAgent " +
-                "o el robot no está sobre el NavMesh.", this);
-            enabled = false;
-            return;
-        }
-
-        ChoosePatrolDestination();
+        ElegirDestino();
     }
 
     private void Update()
     {
-        switch (currentState)
+        if (agente == null || !agente.isOnNavMesh)
+            return;
+
+        if (esperando)
         {
-            case State.Patrol:
-                Patrol();
-                break;
+            temporizador -= Time.deltaTime;
 
-            case State.Alerta:
-                Alert();
-                break;
-
-            case State.Chase:
-                Chase();
-                break;
-        }
-    }
-
-    private void Patrol()
-    {
-        detectionTimer -= Time.deltaTime;
-
-        if (detectionTimer <= 0f)
-        {
-            detectionTimer = detectionInterval;
-
-            Transform player = FindVisiblePlayer();
-
-            if (player != null)
+            if (temporizador <= 0f)
             {
-                BeginAlert(player);
-                return;
-            }
-        }
-
-        patrolTimer -= Time.deltaTime;
-
-        if (!agent.pathPending &&
-            agent.remainingDistance <= agent.stoppingDistance + 0.2f)
-        {
-            if (patrolTimer <= 0f)
-            {
-                patrolTimer = patrolWaitTime;
-                ChoosePatrolDestination();
-            }
-        }
-    }
-
-    private Transform FindVisiblePlayer()
-    {
-        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-        GameObject[] shadowPlayers = GameObject.FindGameObjectsWithTag("ShadowPlayer");
-
-        Transform bestPlayer = null;
-        float nearestDistance = float.MaxValue;
-
-        Vector3 origin = visionPoint != null
-            ? visionPoint.position
-            : transform.position + Vector3.up * 1.5f;
-
-        Vector3 forward = visionPoint != null
-            ? visionPoint.forward
-            : transform.forward;
-
-        foreach (GameObject player in players)
-        {
-            CheckPlayer(player.transform);
-        }
-
-        foreach (GameObject player in shadowPlayers)
-        {
-            CheckPlayer(player.transform);
-        }
-
-        return bestPlayer;
-
-        void CheckPlayer(Transform player)
-        {
-            Vector3 destination = player.position + Vector3.up;
-            Vector3 direction = destination - origin;
-            float distance = direction.magnitude;
-
-            if (distance > visionDistance || distance < 0.01f)
-                return;
-
-            float angle = Vector3.Angle(forward, direction);
-
-            if (angle > visionAngle * 0.5f)
-                return;
-
-            if (Physics.Raycast(
-                origin,
-                direction.normalized,
-                distance,
-                obstacleMask,
-                QueryTriggerInteraction.Ignore))
-            {
-                return;
+                esperando = false;
+                ElegirDestino();
             }
 
-            if (distance < nearestDistance)
-            {
-                nearestDistance = distance;
-                bestPlayer = player;
-            }
+            return;
         }
-    }
-
-    private void BeginAlert(Transform player)
-    {
-        target = player;
-        currentState = State.Alerta;
-        alertTimer = alertDuration;
-
-        agent.isStopped = true;
-        agent.ResetPath();
-
-        SetEyesRed();
 
        
+        if (agente.pathPending)
+            return;
 
-        if (audioSource != null && detectedClip != null)
-        {
-            audioSource.PlayOneShot(detectedClip);
-        }
-    }
-
-    private void Alert()
-    {
-        alertTimer -= Time.deltaTime;
-
-        if (alertTimer <= 0f)
-        {
-          
-
-            currentState = State.Chase;
-            agent.isStopped = false;
-            agent.speed = agent.speed; 
-
-            
-            Chase();
-        }
-    }
-
-    private void Chase()
-    {
         
-        if (target != null && agent.isOnNavMesh)
+        if (agente.pathStatus == NavMeshPathStatus.PathInvalid ||
+            agente.pathStatus == NavMeshPathStatus.PathPartial)
         {
-            agent.SetDestination(target.position);
+            ElegirDestino();
+            return;
+        }
+
+       
+        if (agente.hasPath &&
+            agente.remainingDistance <= distanciaLlegada + 0.2f)
+        {
+            agente.ResetPath();
+            esperando = true;
+            temporizador = tiempoEspera;
         }
     }
 
-    private void ChoosePatrolDestination()
+    private void ElegirDestino()
     {
-        for (int i = 0; i < 20; i++)
+        if (agente == null || !agente.isOnNavMesh)
+            return;
+
+        for (int i = 0; i < intentosMaximos; i++)
         {
-            Vector3 randomPoint = transform.position +
-                Random.insideUnitSphere * patrolRadius;
+            Vector3 puntoAleatorio =
+                transform.position +
+                Random.insideUnitSphere * radioPatrulla;
+
+            NavMeshHit hit;
 
             if (NavMesh.SamplePosition(
-                randomPoint, out NavMeshHit hit,
-                3f, NavMesh.AllAreas))
+                puntoAleatorio,
+                out hit,
+                distanciaMuestreo,
+                agente.areaMask))
             {
-                agent.isStopped = false;
-                agent.SetDestination(hit.position);
-                return;
-            }
-        }
-    }
+                NavMeshPath camino = new NavMeshPath();
 
-    private void SetEyesRed()
-    {
-        foreach (Renderer eye in eyeRenderers)
-        {
-            if (eye == null)
-                continue;
-
-            foreach (Material material in eye.materials)
-            {
-                if (material.HasProperty("_BaseColor"))
-                    material.SetColor("_BaseColor", alertColor);
-
-                if (material.HasProperty("_Color"))
-                    material.SetColor("_Color", alertColor);
-
-                if (material.HasProperty("_EmissionColor"))
+                if (agente.CalculatePath(hit.position, camino) &&
+                    camino.status == NavMeshPathStatus.PathComplete)
                 {
-                    material.EnableKeyword("_EMISSION");
-                    material.SetColor("_EmissionColor", alertColor * 3f);
+                    if (agente.SetDestination(hit.position))
+                    {
+                        esperando = false;
+                        return;
+                    }
                 }
             }
         }
 
-        foreach (Light eyeLight in eyeLights)
-        {
-            if (eyeLight == null)
-                continue;
+        
+        esperando = true;
+        temporizador = 1f;
 
-            eyeLight.color = alertColor;
-            eyeLight.enabled = true;
-        }
+        Debug.LogWarning(
+            "RobotPatrulla: no se encontro un destino valido.",
+            gameObject
+        );
     }
-
-    private void OnDrawGizmosSelected()
-    {
-        Transform point = visionPoint != null
-            ? visionPoint
-            : transform;
-
-        Vector3 origin = visionPoint != null
-            ? visionPoint.position
-            : transform.position + Vector3.up * 1.5f;
-
-        Vector3 forward = point.forward;
-
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(origin, visionDistance);
-
-        Vector3 left = Quaternion.Euler(
-            0f, -visionAngle * 0.5f, 0f) * forward;
-
-        Vector3 right = Quaternion.Euler(
-            0f, visionAngle * 0.5f, 0f) * forward;
-
-        Gizmos.DrawRay(origin, left * visionDistance);
-        Gizmos.DrawRay(origin, right * visionDistance);
-    }
-
-
-    private void OnTriggerEnter(Collider other)
-    {
-
-        Debug.Log(
-    "Robot detectó: " + other.name +
-    " | Layer: " + LayerMask.LayerToName(other.gameObject.layer) +
-    " | Tag: " + other.tag);
-
-        if (isDestroyed)
-            return;
-
-        // Comprueba si el collider pertenece al Layer de las hitboxes.
-        int layerBit = 1 << other.gameObject.layer;
-
-        if ((playerHitboxLayer.value & layerBit) == 0)
-            return;
-
-        // Busca el personaje al que pertenece el collider.
-        Transform playerRoot = other.transform;
-
-        while (playerRoot != null &&
-               !playerRoot.CompareTag("Player") &&
-               !playerRoot.CompareTag("ShadowPlayer"))
-        {
-            playerRoot = playerRoot.parent;
-        }
-
-        if (playerRoot != null)
-        {
-            Debug.Log("¡Robot tocó al personaje: " + playerRoot.name + "!");
-            KillPlayer();
-        }
-    }
-
-    private void KillPlayer()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
-
 }
