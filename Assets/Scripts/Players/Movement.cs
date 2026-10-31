@@ -24,6 +24,12 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private KeyCode runKey = KeyCode.LeftShift;
     [SerializeField] private KeyCode jumpKey = KeyCode.Space;
 
+    [Header("Animation")]
+    [SerializeField] private Animator animator;
+    private static readonly int SpeedHash = Animator.StringToHash("Speed");
+    private static readonly int IsGroundedHash = Animator.StringToHash("IsGrounded");
+    private static readonly int JumpHash = Animator.StringToHash("Jump");
+
     private Rigidbody rb;
 
     private Vector2 moveInput;
@@ -41,6 +47,9 @@ public class CharacterMovement : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+
+        if (animator == null)
+            animator = GetComponentInChildren<Animator>();
 
         // Si no se asigna la cámara, busca la Main Camera por defecto
         if (cameraTransform == null && Camera.main != null)
@@ -76,10 +85,22 @@ public class CharacterMovement : MonoBehaviour
 
     private void Update()
     {
-        if (!controlsEnabled)
+        if (controlsEnabled)
+            ReadInput();
+
+        UpdateAnimator();
+    }
+
+    private void UpdateAnimator()
+    {
+        if (animator == null)
             return;
 
-        ReadInput();
+        Vector3 v = rb.linearVelocity;
+        float horizontalSpeed = new Vector2(v.x, v.z).magnitude;
+
+        animator.SetFloat(SpeedHash, horizontalSpeed, 0.1f, Time.deltaTime);
+        animator.SetBool(IsGroundedHash, IsGrounded());
     }
 
     private void FixedUpdate()
@@ -170,6 +191,9 @@ public class CharacterMovement : MonoBehaviour
             Vector3.up * jumpForce,
             ForceMode.Impulse
         );
+
+        if (animator != null)
+            animator.SetTrigger(JumpHash);
     }
 
     private bool IsGrounded()
