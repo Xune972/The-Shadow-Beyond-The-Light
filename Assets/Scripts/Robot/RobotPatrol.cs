@@ -40,11 +40,56 @@ public class RobotPatrol : MonoBehaviour
     public AudioClip detectedClip;
     public float alertDuration = 1f;
 
+    [Header("Sonidos del robot (siempre activo)")]
+    public AudioSource ambientSource;
+    public AudioClip ambientPatrolClip;
+    public AudioClip ambientChaseClip;
+
+    [Header("Pasos del robot (solo al moverse)")]
+    public AudioSource stepsSource;
+    public AudioClip stepsPatrolClip;
+    public AudioClip stepsChaseClip;
+    public float minMoveSpeed = 0.1f;
+
     private State currentState = State.Patrol;
     private Transform target;
     private float alertTimer;
     private float patrolTimer;
     private float detectionTimer;
+
+    private void SetAudioMode ( bool chasing)
+    {
+        AudioClip ambient = chasing ? ambientChaseClip : ambientPatrolClip;
+
+        AudioClip steps = chasing ? stepsChaseClip : stepsPatrolClip;
+
+        if ( ambientSource != null && ambientSource.clip != ambient)
+        {
+            ambientSource.clip = ambient;
+            ambientSource.Play();
+        }
+
+        if (stepsSource != null && stepsSource.clip != steps)
+        {
+            bool wasPlaying = stepsSource.isPlaying;
+            stepsSource.clip = steps;
+            if ( wasPlaying)
+                stepsSource.Play();
+        }
+    }
+
+    private void UpdateMovementAudio()
+    {
+        if (stepsSource == null || stepsSource.clip == null) return;
+        {
+            bool moving = agent.isOnNavMesh && !agent.isStopped && agent.velocity.magnitude > minMoveSpeed;
+
+            if (moving && !stepsSource.isPlaying)
+                stepsSource.Play();
+            else if (!moving && stepsSource.isPlaying)
+                stepsSource.Stop();
+        }
+    }
 
     private void Start()
     {
@@ -63,6 +108,29 @@ public class RobotPatrol : MonoBehaviour
         }
 
         ChoosePatrolDestination();
+
+        ambientSource.loop = true;
+        stepsSource.loop = true;
+        SetAudioMode(false);
+        ambientSource.Play();
+
+        if (ambientSource != null)
+        {
+            ambientSource.loop = true;
+            ambientSource.playOnAwake = false;
+        }
+        else Debug.LogWarning("RobotPatrol: falta Ambient Source", this);
+
+        if (stepsSource != null)
+        {
+            stepsSource.loop = true;
+            stepsSource.playOnAwake = false;
+        }
+        else Debug.LogWarning("RobotPatrol: falta Steps Source", this);
+
+        SetAudioMode(false);
+        if (ambientSource != null && ambientSource.clip != null)
+            ambientSource.Play();
     }
 
     private void Update()
@@ -81,6 +149,8 @@ public class RobotPatrol : MonoBehaviour
                 Chase();
                 break;
         }
+
+        UpdateMovementAudio();
     }
 
     private void Patrol()
@@ -201,6 +271,7 @@ public class RobotPatrol : MonoBehaviour
           
 
             currentState = State.Chase;
+            SetAudioMode(true);
             agent.isStopped = false;
             agent.speed = agent.speed; 
 
