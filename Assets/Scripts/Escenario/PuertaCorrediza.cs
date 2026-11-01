@@ -1,4 +1,5 @@
 using UnityEngine;
+[RequireComponent(typeof(AudioSource))]
 
 public class PuertaCorrediza : MonoBehaviour
 {
@@ -8,10 +9,24 @@ public class PuertaCorrediza : MonoBehaviour
     public float velocidad = 3.0f;
     public KeyCode teclaInteraccion = KeyCode.E;
 
+    [Header("Sonidos")]
+    [SerializeField] private AudioClip openClip;
+    [SerializeField] private AudioClip closeClip;
+    [SerializeField] private Vector2 pitchRange = new Vector2(0.95f, 1.05f);
+    [Range(0f, 1f)]
+    [SerializeField] private float volume = 1f;
+
+    private AudioSource audioSource;
     private bool jugadorCerca = false;
     private bool estaAbierta = false;
     private Vector3 posicionInicial;
     private Vector3 posicionObjetivo;
+
+    void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.playOnAwake = false;
+    }
 
     void Start()
     {
@@ -30,6 +45,7 @@ public class PuertaCorrediza : MonoBehaviour
         if (jugadorCerca && Input.GetKeyDown(teclaInteraccion))
         {
             estaAbierta = !estaAbierta; // Alterna el estado (abrir/cerrar)
+            PlayDoorSound(estaAbierta);
         }
 
         if (puerta != null)
@@ -40,6 +56,15 @@ public class PuertaCorrediza : MonoBehaviour
             // Mueve la puerta de forma fluida hacia el destino
             puerta.position = Vector3.Lerp(puerta.position, destino, Time.deltaTime * velocidad);
         }
+    }
+
+    private void PlayDoorSound(bool opening)
+    {
+        AudioClip clip = opening ? openClip : closeClip;
+        if (clip == null) return;
+
+        audioSource.pitch = Random.Range(pitchRange.x, pitchRange.y);
+        audioSource.PlayOneShot(clip, volume);
     }
 
     private void OnTriggerEnter(Collider other)
