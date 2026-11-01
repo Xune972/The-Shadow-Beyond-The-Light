@@ -1,5 +1,5 @@
 using UnityEngine;
-
+[RequireComponent(typeof(AudioSource))]
 public class PisoCorredizo : MonoBehaviour
 {
     [Header("Configuración del Piso")]
@@ -16,10 +16,24 @@ public class PisoCorredizo : MonoBehaviour
     [Tooltip("Tag que debe tener el jugador para poder accionar este piso (solo el personaje sombra)")]
     public string tagJugadorPermitido = "ShadowPlayer";
 
+    [Header("Sonidos")]
+    [SerializeField] private AudioClip openClip;
+    [SerializeField] private AudioClip closeClip;
+    [SerializeField] private Vector2 pitchRange = new Vector2(0.95f, 1.05f);
+    [Range(0f, 1f)]
+    [SerializeField] private float volume = 1f;
+
+    private AudioSource audioSource;
     private bool jugadorCerca = false;
     private bool enPosicionFinal = false;
     private Vector3 posicionInicial;
     private Vector3 posicionObjetivo;
+
+    void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.playOnAwake = false;
+    }
 
     void Start()
     {
@@ -37,6 +51,7 @@ public class PisoCorredizo : MonoBehaviour
             if (puedeAlternar || !enPosicionFinal)
             {
                 enPosicionFinal = !enPosicionFinal;
+                PlayFloorSound(enPosicionFinal);
             }
         }
 
@@ -45,6 +60,14 @@ public class PisoCorredizo : MonoBehaviour
             Vector3 destino = enPosicionFinal ? posicionObjetivo : posicionInicial;
             piso.position = Vector3.Lerp(piso.position, destino, Time.deltaTime * velocidad);
         }
+    }
+    private void PlayFloorSound(bool opening)
+    {
+        AudioClip clip = opening ? openClip : closeClip;
+        if (clip == null) return;
+
+        audioSource.pitch = Random.Range(pitchRange.x, pitchRange.y);
+        audioSource.PlayOneShot(clip, volume);
     }
 
     private void OnTriggerEnter(Collider other)
