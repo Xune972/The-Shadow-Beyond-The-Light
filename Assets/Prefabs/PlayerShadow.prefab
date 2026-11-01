@@ -382,7 +382,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 80
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!114 &8610869300345659815
 MonoBehaviour:
@@ -430,6 +430,11 @@ MonoBehaviour:
   healPerSecond: 20
   characterRenderer: {fileID: 8701442683082799532}
   killZone: {fileID: 0}
+  heartbeatSource: {fileID: 0}
+  heartbeatClip: {fileID: 0}
+  volumeRange: {x: 0.4, y: 1}
+  pitchRange: {x: 1, y: 1.4}
+  fadeSpeed: 4
 --- !u!114 &8464525063207205347
 MonoBehaviour:
   m_ObjectHideFlags: 0
