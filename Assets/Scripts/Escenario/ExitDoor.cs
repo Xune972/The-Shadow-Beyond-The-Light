@@ -40,7 +40,7 @@ public class ExitDoor : MonoBehaviour
     {
         if (doorClips == null || doorClips.Length == 0) return;
 
-        // Elige un clip al azar, distinto al anterior
+        
         int i = Random.Range(0, doorClips.Length);
         if (doorClips.Length > 1 && i == lastIndex)
             i = (i + 1) % doorClips.Length;
