@@ -4477,7 +4477,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 759257787}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!95 &759257796
 Animator:
   serializedVersion: 7
@@ -10873,7 +10873,7 @@ Transform:
   m_GameObject: {fileID: 1570696006}
   serializedVersion: 2
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: -13.34, y: 3, z: -7.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13624,6 +13624,26 @@ PrefabInstance:
     - target: {fileID: 4713745390302683214, guid: 9ab0a5fc937fe634d8471c2b61486118, type: 3}
       propertyPath: m_Name
       value: ParticleHumo
+      objectReference: {fileID: 0}
+    - target: {fileID: 8852380794610926699, guid: 9ab0a5fc937fe634d8471c2b61486118, type: 3}
+      propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8852380794610926699, guid: 9ab0a5fc937fe634d8471c2b61486118, type: 3}
+      propertyPath: ShapeModule.m_Scale.x
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 8852380794610926699, guid: 9ab0a5fc937fe634d8471c2b61486118, type: 3}
+      propertyPath: ShapeModule.m_Position.x
+      value: 0.28768152
+      objectReference: {fileID: 0}
+    - target: {fileID: 8852380794610926699, guid: 9ab0a5fc937fe634d8471c2b61486118, type: 3}
+      propertyPath: ShapeModule.m_Position.y
+      value: -0.7832099
+      objectReference: {fileID: 0}
+    - target: {fileID: 8852380794610926699, guid: 9ab0a5fc937fe634d8471c2b61486118, type: 3}
+      propertyPath: ShapeModule.m_Position.z
+      value: 0.15330505
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
