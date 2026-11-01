@@ -4378,17 +4378,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: CinemachineCamera
       objectReference: {fileID: 0}
+    - target: {fileID: 5444026528025899517, guid: d18a99dfd246c184c95dc4347be74966, type: 3}
+      propertyPath: CameraDistance
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5444026528025899517, guid: d18a99dfd246c184c95dc4347be74966, type: 3}
+      propertyPath: ShoulderOffset.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5689679358060941364, guid: d18a99dfd246c184c95dc4347be74966, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.9174099
       objectReference: {fileID: 0}
     - target: {fileID: 5689679358060941364, guid: d18a99dfd246c184c95dc4347be74966, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5689679358060941364, guid: d18a99dfd246c184c95dc4347be74966, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.4355507
+      value: -5.5644493
       objectReference: {fileID: 0}
     - target: {fileID: 5689679358060941364, guid: d18a99dfd246c184c95dc4347be74966, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4426,6 +4434,10 @@ PrefabInstance:
       propertyPath: Target.TrackingTarget
       value: 
       objectReference: {fileID: 418676011}
+    - target: {fileID: 8116016139550208221, guid: d18a99dfd246c184c95dc4347be74966, type: 3}
+      propertyPath: AvoidObstacles.MaximumEffort
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9764,7 +9776,10 @@ MonoBehaviour:
   exitManager: {fileID: 1887270661}
   selectedCharacter:
   - {fileID: 990012948}
-  doorClips: []
+  doorClips:
+  - {fileID: 8300000, guid: 67b2cff98a9c8ab4a8255cb0b9d2edb3, type: 3}
+  - {fileID: 8300000, guid: 3acb9c6d5158c4b4da229d4e5a0d43d8, type: 3}
+  - {fileID: 8300000, guid: edc2a751794cbe542980ff44eb30e98c, type: 3}
   pitchRange: {x: 0.95, y: 1.05}
   volumeRange: {x: 0.85, y: 1}
 --- !u!82 &1579170040
@@ -9776,10 +9791,10 @@ AudioSource:
   m_GameObject: {fileID: 1579170033}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 5482485330813605115, guid: 6e50b1d57f65f2d44aa714e21ffb2dc8, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -9788,8 +9803,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 2
+  MaxDistance: 200
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -9824,7 +9839,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.6
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -10298,10 +10313,10 @@ AudioSource:
   m_GameObject: {fileID: 1671597664}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 5482485330813605115, guid: 6e50b1d57f65f2d44aa714e21ffb2dc8, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -10310,8 +10325,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 2
+  MaxDistance: 200
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -10346,7 +10361,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.6
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -10651,7 +10666,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4264968855052796137, guid: ac650841fb98f7345bc7754bbc2e60b2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.61162
+      value: -13.611623
       objectReference: {fileID: 0}
     - target: {fileID: 4264968855052796137, guid: ac650841fb98f7345bc7754bbc2e60b2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -10659,7 +10674,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4264968855052796137, guid: ac650841fb98f7345bc7754bbc2e60b2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -37.88978
+      value: -37.906307
       objectReference: {fileID: 0}
     - target: {fileID: 4264968855052796137, guid: ac650841fb98f7345bc7754bbc2e60b2, type: 3}
       propertyPath: m_LocalRotation.w
