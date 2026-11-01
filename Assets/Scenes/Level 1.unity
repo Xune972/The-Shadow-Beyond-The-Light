@@ -13626,6 +13626,7 @@ GameObject:
   - component: {fileID: 2030928798}
   - component: {fileID: 2030928804}
   - component: {fileID: 2030928803}
+  - component: {fileID: 2030928805}
   m_Layer: 0
   m_Name: Illness report
   m_TagString: Untagged
@@ -13857,6 +13858,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2030928805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030928797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bca6e9501b98c3641825999c1b910e06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NoteSFX
+  clips:
+  - {fileID: 8300000, guid: 6563d91f11d556643b556c27394b8274, type: 3}
+  - {fileID: 8300000, guid: cff846f32b30749479960f06c49fe40c, type: 3}
+  - {fileID: 8300000, guid: 1e45be91c70414d45849b7c00c48f779, type: 3}
+  mixerGroup: {fileID: 5482485330813605115, guid: 6e50b1d57f65f2d44aa714e21ffb2dc8, type: 2}
+  pitchRange: {x: 0.95, y: 1.05}
+  volumeRange: {x: 0.85, y: 1}
 --- !u!1 &2083491180 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b3c49d7d4539fdd48bb431228ec0b668, type: 3}
