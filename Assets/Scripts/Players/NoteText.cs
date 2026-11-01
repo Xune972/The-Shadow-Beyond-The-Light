@@ -11,7 +11,7 @@ public class NoteText : MonoBehaviour
     }
     void Update()
     {
-        if (nearbyPlayer && Input.GetKeyDown(KeyCode.T))
+        if (nearbyPlayer && Input.GetKeyDown(KeyCode.R))
         {
             if (Note.activeSelf == false)
             {
