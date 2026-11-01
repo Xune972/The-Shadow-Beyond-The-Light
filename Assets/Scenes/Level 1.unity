@@ -1445,6 +1445,73 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.5689852, y: 1.5000004, z: 1.5}
   m_Center: {x: 0, y: 0.7514314, z: 0}
+--- !u!1001 &296382286
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 783611390}
+    m_Modifications:
+    - target: {fileID: 4469395051516145269, guid: 140c7dc6e2bb76c4c865dbb9a5fefd47, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.1544507
+      objectReference: {fileID: 0}
+    - target: {fileID: 4469395051516145269, guid: 140c7dc6e2bb76c4c865dbb9a5fefd47, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.3151182
+      objectReference: {fileID: 0}
+    - target: {fileID: 4469395051516145269, guid: 140c7dc6e2bb76c4c865dbb9a5fefd47, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 14.824536
+      objectReference: {fileID: 0}
+    - target: {fileID: 4469395051516145269, guid: 140c7dc6e2bb76c4c865dbb9a5fefd47, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4469395051516145269, guid: 140c7dc6e2bb76c4c865dbb9a5fefd47, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4469395051516145269, guid: 140c7dc6e2bb76c4c865dbb9a5fefd47, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4469395051516145269, guid: 140c7dc6e2bb76c4c865dbb9a5fefd47, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4469395051516145269, guid: 140c7dc6e2bb76c4c865dbb9a5fefd47, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4469395051516145269, guid: 140c7dc6e2bb76c4c865dbb9a5fefd47, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4469395051516145269, guid: 140c7dc6e2bb76c4c865dbb9a5fefd47, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8484372718658325601, guid: 140c7dc6e2bb76c4c865dbb9a5fefd47, type: 3}
+      propertyPath: m_Name
+      value: HeartBeatSound
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 140c7dc6e2bb76c4c865dbb9a5fefd47, type: 3}
+--- !u!82 &296382287 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1719572861551044342, guid: 140c7dc6e2bb76c4c865dbb9a5fefd47, type: 3}
+  m_PrefabInstance: {fileID: 296382286}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &296382288 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4469395051516145269, guid: 140c7dc6e2bb76c4c865dbb9a5fefd47, type: 3}
+  m_PrefabInstance: {fileID: 296382286}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &300584710
 Mesh:
   m_ObjectHideFlags: 0
@@ -4893,9 +4960,20 @@ PrefabInstance:
       propertyPath: killZone
       value: 
       objectReference: {fileID: 1309577982}
+    - target: {fileID: 8617449243372631274, guid: dc8c1ecef5af0d641b0b8e1ba10c07e2, type: 3}
+      propertyPath: heartbeatClip
+      value: 
+      objectReference: {fileID: 8300000, guid: fb3a5c3f7b924ec4ca9ae89e1a13bfd8, type: 3}
+    - target: {fileID: 8617449243372631274, guid: dc8c1ecef5af0d641b0b8e1ba10c07e2, type: 3}
+      propertyPath: heartbeatSource
+      value: 
+      objectReference: {fileID: 296382287}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3851166226648516507, guid: dc8c1ecef5af0d641b0b8e1ba10c07e2, type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 296382288}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc8c1ecef5af0d641b0b8e1ba10c07e2, type: 3}
 --- !u!4 &783611390 stripped
