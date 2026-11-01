@@ -3778,7 +3778,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &502960460
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13646,7 +13646,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1333074902
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17430,6 +17430,11 @@ MonoBehaviour:
   healPerSecond: 20
   characterRenderer: {fileID: 1582910669}
   killZone: {fileID: 1098318825}
+  heartbeatSource: {fileID: 0}
+  heartbeatClip: {fileID: 0}
+  volumeRange: {x: 0.4, y: 1}
+  pitchRange: {x: 1, y: 1.4}
+  fadeSpeed: 4
 --- !u!114 &1582910673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18959,7 +18964,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1779635285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23571,7 +23576,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2109822412
 RectTransform:
   m_ObjectHideFlags: 0
