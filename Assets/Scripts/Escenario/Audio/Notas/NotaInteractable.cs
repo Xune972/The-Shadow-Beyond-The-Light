@@ -17,14 +17,17 @@ public class NoteInteractable : MonoBehaviour
     [SerializeField] private string playerTag = "Shadow"; // Tag del personaje de sombra
     [SerializeField] private bool freezePlayerWhileOpen = true;
 
+
     private AudioSource audioSource;
     private CharacterMovement player;
     private bool playerInRange;
     private bool isOpen;
     private bool alreadyPlayed;
+    private NoteSFX noteSfx;
 
     private void Awake()
     {
+        noteSfx = GetComponent<NoteSFX>();
         audioSource = GetComponent<AudioSource>();
         audioSource.playOnAwake = false;
         audioSource.loop = false;
@@ -66,6 +69,7 @@ public class NoteInteractable : MonoBehaviour
 
         if (interactPrompt != null) interactPrompt.SetActive(false);
         if (notePanel != null) notePanel.SetActive(true);
+        if (noteSfx != null) noteSfx.Play();
 
         if (noteAudio != null && !(playOnlyOnce && alreadyPlayed))
         {
