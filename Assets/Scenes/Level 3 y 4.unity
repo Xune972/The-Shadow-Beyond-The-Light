@@ -6147,7 +6147,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &979268412
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9820,7 +9820,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1552969942
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14641,6 +14641,18 @@ PrefabInstance:
       propertyPath: cameraTransform
       value: 
       objectReference: {fileID: 528440670}
+    - target: {fileID: 6886856538203669595, guid: 53ab8cdcf173c734e8ae9f73c6733dc3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6886856538203669595, guid: 53ab8cdcf173c734e8ae9f73c6733dc3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 6886856538203669595, guid: 53ab8cdcf173c734e8ae9f73c6733dc3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.09
+      objectReference: {fileID: 0}
     - target: {fileID: 7422118849057088470, guid: 53ab8cdcf173c734e8ae9f73c6733dc3, type: 3}
       propertyPath: m_Radius
       value: 0
