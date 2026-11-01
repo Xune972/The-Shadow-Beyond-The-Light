@@ -2840,6 +2840,7 @@ GameObject:
   - component: {fileID: 472782952}
   - component: {fileID: 472782954}
   - component: {fileID: 472782953}
+  - component: {fileID: 472782955}
   m_Layer: 0
   m_Name: Report
   m_TagString: Untagged
@@ -3071,6 +3072,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &472782955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 472782947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bca6e9501b98c3641825999c1b910e06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NoteSFX
+  clips:
+  - {fileID: 8300000, guid: 6563d91f11d556643b556c27394b8274, type: 3}
+  - {fileID: 8300000, guid: cff846f32b30749479960f06c49fe40c, type: 3}
+  - {fileID: 8300000, guid: 1e45be91c70414d45849b7c00c48f779, type: 3}
+  mixerGroup: {fileID: 5482485330813605115, guid: 6e50b1d57f65f2d44aa714e21ffb2dc8, type: 2}
+  pitchRange: {x: 0.95, y: 1.05}
+  volumeRange: {x: 0.85, y: 1}
 --- !u!1001 &499210746
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16547,6 +16567,7 @@ GameObject:
   - component: {fileID: 1511073895}
   - component: {fileID: 1511073901}
   - component: {fileID: 1511073900}
+  - component: {fileID: 1511073902}
   m_Layer: 0
   m_Name: Report (2)
   m_TagString: Untagged
@@ -16778,6 +16799,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1511073902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511073894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bca6e9501b98c3641825999c1b910e06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NoteSFX
+  clips:
+  - {fileID: 8300000, guid: 6563d91f11d556643b556c27394b8274, type: 3}
+  - {fileID: 8300000, guid: cff846f32b30749479960f06c49fe40c, type: 3}
+  - {fileID: 8300000, guid: 1e45be91c70414d45849b7c00c48f779, type: 3}
+  mixerGroup: {fileID: 5482485330813605115, guid: 6e50b1d57f65f2d44aa714e21ffb2dc8, type: 2}
+  pitchRange: {x: 0.95, y: 1.05}
+  volumeRange: {x: 0.85, y: 1}
 --- !u!1001 &1527121199
 PrefabInstance:
   m_ObjectHideFlags: 0
