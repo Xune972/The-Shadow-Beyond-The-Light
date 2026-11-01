@@ -8751,7 +8751,7 @@ MonoBehaviour:
   m_text: "La \xFAltima enfermedad descubierta en \n\xC1frica subsahariana apodada
     como \u201CPhoiboskia\u201D est\xE1 creciendo en n\xFAmeros de infectados as\xED
     que empezamos a experimentar con voluntarios para encontrar c\xF3mo erradicarla
-    antes que sea una plaga mundial."
+    antes que sea una plaga mundial  ."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
   m_sharedMaterial: {fileID: 2140474, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
