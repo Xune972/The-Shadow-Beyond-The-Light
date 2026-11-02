@@ -10418,7 +10418,7 @@ Transform:
   m_GameObject: {fileID: 804899299}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 40.26006, y: -2.06, z: 27.05652}
+  m_LocalPosition: {x: 40.39, y: -2.47, z: 13.49}
   m_LocalScale: {x: 2, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -18654,7 +18654,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NoteSFX
   clips:
   - {fileID: 8300000, guid: 6563d91f11d556643b556c27394b8274, type: 3}
-  - {fileID: 8300000, guid: 3acb9c6d5158c4b4da229d4e5a0d43d8, type: 3}
+  - {fileID: 8300000, guid: cff846f32b30749479960f06c49fe40c, type: 3}
   - {fileID: 8300000, guid: 1e45be91c70414d45849b7c00c48f779, type: 3}
   mixerGroup: {fileID: 5482485330813605115, guid: 6e50b1d57f65f2d44aa714e21ffb2dc8, type: 2}
   pitchRange: {x: 0.95, y: 1.05}
@@ -20767,6 +20767,10 @@ PrefabInstance:
       propertyPath: heartbeatClip
       value: 
       objectReference: {fileID: 8300000, guid: fb3a5c3f7b924ec4ca9ae89e1a13bfd8, type: 3}
+    - target: {fileID: 8617449243372631274, guid: dc8c1ecef5af0d641b0b8e1ba10c07e2, type: 3}
+      propertyPath: heartbeatSource
+      value: 
+      objectReference: {fileID: 1716893033}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -23672,6 +23676,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1499805685}
     m_Modifications:
+    - target: {fileID: 1719572861551044342, guid: 140c7dc6e2bb76c4c865dbb9a5fefd47, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: fb3a5c3f7b924ec4ca9ae89e1a13bfd8, type: 3}
     - target: {fileID: 4469395051516145269, guid: 140c7dc6e2bb76c4c865dbb9a5fefd47, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.945692
@@ -23724,6 +23732,11 @@ PrefabInstance:
 --- !u!4 &1716893032 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4469395051516145269, guid: 140c7dc6e2bb76c4c865dbb9a5fefd47, type: 3}
+  m_PrefabInstance: {fileID: 1716893031}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1716893033 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1719572861551044342, guid: 140c7dc6e2bb76c4c865dbb9a5fefd47, type: 3}
   m_PrefabInstance: {fileID: 1716893031}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1719661573
