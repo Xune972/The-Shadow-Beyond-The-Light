@@ -22,6 +22,15 @@ public class ShadowPlayerHealth : MonoBehaviour
     private Material characterMaterial;
     private Color originalColor;
 
+    [Header("Audio - Latido")]
+    [SerializeField] private AudioSource heartbeatSource;
+    [SerializeField] private AudioClip heartbeatClip;
+    [SerializeField] private Vector2 volumeRange = new Vector2(0.4f, 1f);  // vida llena -> vida casi en 0
+    [SerializeField] private Vector2 pitchRange = new Vector2(1f, 1.4f);   // el latido se acelera
+    [SerializeField] private float fadeSpeed = 4f;
+
+    private float heartbeatFade;        
+
     public float CurrentHealth => currentHealth;
 
     private void Awake()
@@ -42,6 +51,39 @@ public class ShadowPlayerHealth : MonoBehaviour
         // Buscar la KillZone en escena si no está asignada
         if (killZone == null)
             killZone = FindFirstObjectByType<KillZone>();
+
+        if (heartbeatSource != null)
+        {
+            heartbeatSource.clip = heartbeatClip;
+            heartbeatSource.loop = true;
+            heartbeatSource.playOnAwake = false;
+            heartbeatSource.spatialBlend = 0f; // 2D
+        }
+        else Debug.LogWarning("ShadowPlayerHealth: falta asignar Heartbeat Source", this);
+    }
+
+    private void UpdateHeartbeat()
+    {
+        if (heartbeatSource == null || heartbeatClip == null) return;
+
+       
+        float target = isExposedToLight ? 1f : 0f;
+        heartbeatFade = Mathf.MoveTowards(heartbeatFade, target, fadeSpeed * Time.deltaTime);
+
+        if (heartbeatFade > 0f)
+        {
+            if (!heartbeatSource.isPlaying) heartbeatSource.Play();
+
+           
+            float danger = 1f - (currentHealth / maxHealth);
+
+            heartbeatSource.volume = Mathf.Lerp(volumeRange.x, volumeRange.y, danger) * heartbeatFade;
+            heartbeatSource.pitch = Mathf.Lerp(pitchRange.x, pitchRange.y, danger);
+        }
+        else if (heartbeatSource.isPlaying)
+        {
+            heartbeatSource.Stop();
+        }
     }
 
     private void OnEnable()
@@ -54,6 +96,7 @@ public class ShadowPlayerHealth : MonoBehaviour
     {
         if (lightDetector != null)
             lightDetector.OnExposureChanged -= HandleExposureChanged;
+        if (heartbeatSource != null) heartbeatSource.Stop();
     }
 
     private void HandleExposureChanged(bool isExposed)
@@ -64,6 +107,7 @@ public class ShadowPlayerHealth : MonoBehaviour
     private void Update()
     {
         HandleHealthAndFade();
+        UpdateHeartbeat();
     }
 
     private void HandleHealthAndFade()
@@ -108,6 +152,8 @@ public class ShadowPlayerHealth : MonoBehaviour
         // Restablecer valores de salud y transparencia para el reaparecer
         currentHealth = maxHealth;
         UpdateMaterialAlpha();
+        heartbeatFade = 0f;
+        if (heartbeatSource != null) heartbeatSource.Stop();
 
         // Reutilizar el Respawn limpio configurado en la KillZone
         if (killZone != null)
