@@ -6536,7 +6536,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1719661574}
-  m_Father: {fileID: 1325709519}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -10137,6 +10137,18 @@ PrefabInstance:
       value: PlayerLight
       objectReference: {fileID: 0}
     - target: {fileID: 4366992240936341214, guid: 53ab8cdcf173c734e8ae9f73c6733dc3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4366992240936341214, guid: 53ab8cdcf173c734e8ae9f73c6733dc3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4366992240936341214, guid: 53ab8cdcf173c734e8ae9f73c6733dc3, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4366992240936341214, guid: 53ab8cdcf173c734e8ae9f73c6733dc3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -14.05918
       objectReference: {fileID: 0}
@@ -10175,6 +10187,26 @@ PrefabInstance:
     - target: {fileID: 4366992240936341214, guid: 53ab8cdcf173c734e8ae9f73c6733dc3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5067312831298708707, guid: 53ab8cdcf173c734e8ae9f73c6733dc3, type: 3}
+      propertyPath: runSpeed
+      value: 10.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5067312831298708707, guid: 53ab8cdcf173c734e8ae9f73c6733dc3, type: 3}
+      propertyPath: jumpForce
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 5067312831298708707, guid: 53ab8cdcf173c734e8ae9f73c6733dc3, type: 3}
+      propertyPath: walkSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5067312831298708707, guid: 53ab8cdcf173c734e8ae9f73c6733dc3, type: 3}
+      propertyPath: fallMultiplier
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5067312831298708707, guid: 53ab8cdcf173c734e8ae9f73c6733dc3, type: 3}
+      propertyPath: riseMultiplier
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5067312831298708707, guid: 53ab8cdcf173c734e8ae9f73c6733dc3, type: 3}
       propertyPath: cameraTransform
@@ -13722,8 +13754,8 @@ Transform:
   m_GameObject: {fileID: 1099442253}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 28.8202, y: -0.5, z: -51.8}
-  m_LocalScale: {x: 36.41147, y: 1, z: 52.57014}
+  m_LocalPosition: {x: 28.8202, y: -0.5, z: -51.6924}
+  m_LocalScale: {x: 36.41147, y: 1, z: 52.785675}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1382055754}
@@ -13835,8 +13867,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1118999673}
-  - component: {fileID: 1118999675}
-  - component: {fileID: 1118999674}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -13858,6 +13888,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 602270493}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1130101675
 GameObject:
   m_ObjectHideFlags: 0
@@ -13968,8 +14003,7 @@ Transform:
   m_LocalPosition: {x: -11.56571, y: 44.61084, z: 18.5723}
   m_LocalScale: {x: 1, y: 1, z: 0.876027}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 684881812}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1130101681
@@ -13984,7 +14018,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9609b1e0a6d51b499d4eae013d86218, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NoteText
-  Note: {fileID: 684881808}
+  Note: {fileID: 0}
 --- !u!1 &1141005048
 GameObject:
   m_ObjectHideFlags: 0
@@ -14587,9 +14621,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 164222896}
-  m_Father: {fileID: 684881812}
+  m_Children: []
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -19485,6 +19518,18 @@ PrefabInstance:
       value: 112
       objectReference: {fileID: 0}
     - target: {fileID: 3851166226648516507, guid: dc8c1ecef5af0d641b0b8e1ba10c07e2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3851166226648516507, guid: dc8c1ecef5af0d641b0b8e1ba10c07e2, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3851166226648516507, guid: dc8c1ecef5af0d641b0b8e1ba10c07e2, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3851166226648516507, guid: dc8c1ecef5af0d641b0b8e1ba10c07e2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 66.19
       objectReference: {fileID: 0}
@@ -19531,6 +19576,26 @@ PrefabInstance:
     - target: {fileID: 7407811212762260166, guid: dc8c1ecef5af0d641b0b8e1ba10c07e2, type: 3}
       propertyPath: m_Name
       value: PlayerShadow
+      objectReference: {fileID: 0}
+    - target: {fileID: 8610869300345659815, guid: dc8c1ecef5af0d641b0b8e1ba10c07e2, type: 3}
+      propertyPath: runSpeed
+      value: 10.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8610869300345659815, guid: dc8c1ecef5af0d641b0b8e1ba10c07e2, type: 3}
+      propertyPath: jumpForce
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 8610869300345659815, guid: dc8c1ecef5af0d641b0b8e1ba10c07e2, type: 3}
+      propertyPath: walkSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8610869300345659815, guid: dc8c1ecef5af0d641b0b8e1ba10c07e2, type: 3}
+      propertyPath: fallMultiplier
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8610869300345659815, guid: dc8c1ecef5af0d641b0b8e1ba10c07e2, type: 3}
+      propertyPath: riseMultiplier
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8610869300345659815, guid: dc8c1ecef5af0d641b0b8e1ba10c07e2, type: 3}
       propertyPath: cameraTransform
@@ -26758,3 +26823,6 @@ SceneRoots:
   - {fileID: 1571628968}
   - {fileID: 1082368778}
   - {fileID: 451680321}
+  - {fileID: 552110102}
+  - {fileID: 804899304}
+  - {fileID: 1190499622}
