@@ -4,15 +4,15 @@ using UnityEngine;
 public class KillZoneLight : MonoBehaviour
 {
     [Header("Referencias Específicas")]
-    [Tooltip("Arrastra aquí ÚNICAMENTE al personaje de sombras.")]
+    [Tooltip("Arrastra aquí ÚNICAMENTE al personaje de luz.")]
     [SerializeField] private GameObject PlayerLight;
 
-    [Tooltip("Punto exacto donde reaparecerá el personaje de sombras.")]
+    [Tooltip("Punto exacto donde reaparecerá el personaje de luz.")]
     [SerializeField] private Transform respawnPoint;
 
     private void OnTriggerEnter(Collider other)
     {
-        // Solo activa el respawn si el objeto que cayó es el personaje de sombras asignado
+        // Solo activa el respawn si el objeto que cayó es el personaje de luz asignado
         // (o si tocó un colisionador hijo de ese personaje)
         if (PlayerLight != null && (other.gameObject == PlayerLight || other.transform.IsChildOf(PlayerLight.transform)))
         {
