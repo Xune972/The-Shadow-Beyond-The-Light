@@ -10943,7 +10943,7 @@ GameObject:
   - component: {fileID: 887655212}
   - component: {fileID: 887655211}
   - component: {fileID: 887655215}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lado 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11867,7 +11867,7 @@ GameObject:
   - component: {fileID: 952748618}
   - component: {fileID: 952748617}
   - component: {fileID: 952748620}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lado 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11996,7 +11996,7 @@ GameObject:
   - component: {fileID: 965081626}
   - component: {fileID: 965081625}
   - component: {fileID: 965081628}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lado 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14131,7 +14131,7 @@ GameObject:
   - component: {fileID: 1094864712}
   - component: {fileID: 1094864711}
   - component: {fileID: 1094864710}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lado 2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
