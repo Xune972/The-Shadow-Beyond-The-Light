@@ -20,13 +20,13 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.003921569, g: 0.003921569, b: 0.007843138, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -35,7 +35,7 @@ RenderSettings:
   m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
-  m_ReflectionIntensity: 1
+  m_ReflectionIntensity: 0
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
   m_UseRadianceAmbientProbe: 0
@@ -4557,6 +4557,50 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lamp-01 Dead End (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 484621149328067197, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_Intensity
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.012799997
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.000060017108
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.028648913
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.018862428
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.9229712
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.3836487
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.024127739
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0.934
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -176.616
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 225.17
+      objectReference: {fileID: 0}
     - target: {fileID: 8136446397167669708, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
       propertyPath: m_LocalScale.x
       value: 200
@@ -5015,6 +5059,50 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lamp-01 Dead End (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 484621149328067197, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_Intensity
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.01251
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.00097
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.02926
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.0049754716
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.09136981
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.99556524
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.021834671
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 2.544
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -179.661
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -10.48
+      objectReference: {fileID: 0}
     - target: {fileID: 8136446397167669708, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
       propertyPath: m_LocalScale.x
       value: 200
@@ -5088,6 +5176,42 @@ PrefabInstance:
     - target: {fileID: 277418684764723228, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
       propertyPath: m_Name
       value: Lamp-01 Dead End (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 484621149328067197, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_Intensity
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.012330618
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0009300017
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.02920787
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.041055802
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000013783573
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.99915683
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.000000059604638
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -184.706
       objectReference: {fileID: 0}
     - target: {fileID: 8136446397167669708, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
       propertyPath: m_LocalScale.x
@@ -6461,6 +6585,38 @@ PrefabInstance:
     - target: {fileID: 277418684764723228, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
       propertyPath: m_Name
       value: Lamp-01 Dead End (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.011890621
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0012400078
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.029508492
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.044624414
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000014901161
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.9990039
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.00000008940697
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -185.115
       objectReference: {fileID: 0}
     - target: {fileID: 8136446397167669708, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
       propertyPath: m_LocalScale.x
@@ -8178,6 +8334,54 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lamp-01 Dead End (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 484621149328067197, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_Intensity
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.99411
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.99411
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.99411
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.010750265
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0018000054
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.029347263
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.03710068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.000000033527616
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.99931157
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.00000008940698
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -175.748
+      objectReference: {fileID: 0}
     - target: {fileID: 8136446397167669708, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
       propertyPath: m_LocalScale.x
       value: 200
@@ -8885,6 +9089,50 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lamp-01 Dead End
       objectReference: {fileID: 0}
+    - target: {fileID: 484621149328067197, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_Intensity
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0121500585
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.00077999354
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.029225871
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.08029276
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.052161492
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.99522674
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.018868268
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 2.633
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -189.092
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 5.791
+      objectReference: {fileID: 0}
     - target: {fileID: 8136446397167669708, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
       propertyPath: m_LocalScale.x
       value: 200
@@ -8964,7 +9212,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1422455328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9232,6 +9480,42 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lamp-01 Dead End (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 484621149328067197, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_Intensity
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.011340056
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0015900063
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.029227225
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.008877916
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000022025779
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.9999606
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.000000059604645
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -181.017
+      objectReference: {fileID: 0}
     - target: {fileID: 8136446397167669708, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
       propertyPath: m_LocalScale.x
       value: 200
@@ -9250,7 +9534,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8136446397167669708, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.23729
+      value: -4.1
       objectReference: {fileID: 0}
     - target: {fileID: 8136446397167669708, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9336,6 +9620,50 @@ PrefabInstance:
     - target: {fileID: 277418684764723228, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
       propertyPath: m_Name
       value: Lamp-01 Dead End
+      objectReference: {fileID: 0}
+    - target: {fileID: 484621149328067197, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_Intensity
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.01194
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.00029
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.02923
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.032250974
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.03674452
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.99871963
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.012994798
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 1.352
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -176.251
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 4.258
       objectReference: {fileID: 0}
     - target: {fileID: 8136446397167669708, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
       propertyPath: m_LocalScale.x
@@ -9910,6 +10238,50 @@ PrefabInstance:
     - target: {fileID: 277418684764723228, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
       propertyPath: m_Name
       value: Lamp-01 Dead End (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 484621149328067197, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_Intensity
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.011900063
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0025999856
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.02939564
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.045166045
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.22455849
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.9732892
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.015546262
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 2.897
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -184.648
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 25.866
       objectReference: {fileID: 0}
     - target: {fileID: 8136446397167669708, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
       propertyPath: m_LocalScale.x
@@ -11152,6 +11524,50 @@ PrefabInstance:
     - target: {fileID: 277418684764723228, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
       propertyPath: m_Name
       value: Lamp-01 Dead End (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 484621149328067197, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_Intensity
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.012069806
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0004500222
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.028846417
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.01406679
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.13738064
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.9903661
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.010180951
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -1.377
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 181.437
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340762869642590574, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 15.778
       objectReference: {fileID: 0}
     - target: {fileID: 8136446397167669708, guid: 5f748960adbe6fd49ab3c8d921b9411f, type: 3}
       propertyPath: m_LocalScale.x
