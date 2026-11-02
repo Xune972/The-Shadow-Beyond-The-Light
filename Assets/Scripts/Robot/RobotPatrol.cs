@@ -12,6 +12,8 @@ public class RobotPatrol : MonoBehaviour
         Chase
     }
 
+    public bool EstaPersiguiendo => currentState == State.Chase;
+
     [Header("Collision")]
     private bool isDestroyed = false;
     public LayerMask playerHitboxLayer;
