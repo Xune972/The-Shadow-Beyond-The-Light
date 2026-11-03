@@ -12815,6 +12815,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ebbb5f53e1407f4d90b50b03ba5904e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  levelSnapshot: {fileID: 24500006, guid: 6e50b1d57f65f2d44aa714e21ffb2dc8, type: 2}
+  fadeTime: 2
 --- !u!82 &1685924524
 AudioSource:
   m_ObjectHideFlags: 0
