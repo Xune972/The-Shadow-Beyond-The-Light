@@ -316,6 +316,7 @@ GameObject:
   m_Component:
   - component: {fileID: 31210201}
   - component: {fileID: 31210200}
+  - component: {fileID: 31210202}
   m_Layer: 0
   m_Name: Chase_music
   m_TagString: Untagged
@@ -435,6 +436,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &31210202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31210199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39e76e0eca06d1446b8bf284f317ed7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  Music: {fileID: 24500006, guid: 6e50b1d57f65f2d44aa714e21ffb2dc8, type: 2}
+  Chase: {fileID: -5960567210632133809, guid: 6e50b1d57f65f2d44aa714e21ffb2dc8, type: 2}
+  fadeInTime: 2
 --- !u!1 &34078274
 GameObject:
   m_ObjectHideFlags: 0
@@ -11557,11 +11573,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4366992240936341214, guid: 53ab8cdcf173c734e8ae9f73c6733dc3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.05918
+      value: 40.95
       objectReference: {fileID: 0}
     - target: {fileID: 4366992240936341214, guid: 53ab8cdcf173c734e8ae9f73c6733dc3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.88
+      value: 41.77
       objectReference: {fileID: 0}
     - target: {fileID: 4366992240936341214, guid: 53ab8cdcf173c734e8ae9f73c6733dc3, type: 3}
       propertyPath: m_LocalPosition.z
