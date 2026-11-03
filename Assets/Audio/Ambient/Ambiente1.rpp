@@ -1,0 +1,470 @@
+<REAPER_PROJECT 0.1 "7.83/win64" 1793652120 0
+  <NOTES 0 2
+  >
+  RIPPLE 0 0
+  GROUPOVERRIDE 0 0 0 0
+  AUTOXFADE 129
+  ENVATTACH 3
+  POOLEDENVATTACH 0
+  TCPUIFLAGS 0
+  MIXERUIFLAGS 11 48 0
+  ENVFADESZ10 40
+  PEAKGAIN 1
+  FEEDBACK 0
+  PANLAW 1
+  PROJOFFS 0 0 0
+  MAXPROJLEN 0 0
+  GRID 3199 8 1 8 1 0 0 0
+  TIMEMODE 1 5 -1 30 0 0 -1 0
+  VIDEO_CONFIG 0 0 65792
+  PANMODE 3
+  PANLAWFLAGS 3
+  CURSOR 39.5
+  ZOOM 25.47655226259532 736 0
+  VZOOMEX 6 0
+  USE_REC_CFG 0
+  RECMODE 1
+  SMPTESYNC 0 30 100 40 1000 300 0 0 1 0 0
+  LOOP 1
+  LOOPGRAN 0 4
+  RECORD_PATH "Media" ""
+  <RECORD_CFG
+    ZXZhdxgAAQ==
+  >
+  <APPLYFX_CFG
+  >
+  RENDER_FILE ""
+  RENDER_PATTERN ""
+  RENDER_FMT 0 2 0
+  RENDER_1X 0 0
+  RENDER_RANGE 1 0 0 0 1000
+  RENDER_RESAMPLE 3 0 1
+  RENDER_ADDTOPROJ 0
+  RENDER_STEMS 0
+  RENDER_DITHER 0
+  RENDER_TRIM 0.000001 0.000001 0 0
+  TIMELOCKMODE 1
+  TEMPOENVLOCKMODE 1
+  ITEMMIX 1
+  DEFPITCHMODE 589824 0
+  TAKELANE 1
+  SAMPLERATE 44100 0 0
+  <RENDER_CFG
+    ZXZhdxgAAQ==
+  >
+  LOCK 1
+  <METRONOME 6 2
+    VOL 0.25 0.125
+    BEATLEN 4
+    FREQ 1760 880 1
+    SAMPLES "" "" "" ""
+    SPLIGNORE 0 0
+    SPLDEF 2 660 "" 0 ""
+    SPLDEF 3 440 "" 0 ""
+    PATTERN 0 169
+    PATTERNSTR ABBB
+    MULT 1
+  >
+  GLOBAL_AUTO -1
+  TEMPO 120 4 4 0
+  PLAYRATE 1 0 0.25 4
+  SELECTION 0 0
+  SELECTION2 0 0
+  MASTERAUTOMODE 0
+  MASTERTRACKHEIGHT 0 0
+  MASTERPEAKCOL 16576
+  MASTERMUTESOLO 0
+  MASTERTRACKVIEW 0 0.6667 0.5 0.5 0 0 0 0 0 0 0 0 0 0 1
+  MASTERHWOUT 0 0 1 0 0 0 0 -1
+  MASTER_NCH 2 2
+  MASTER_VOLUME 1 0 -1 -1 1
+  MASTER_PANMODE 3
+  MASTER_PANLAWFLAGS 3
+  MASTER_FX 1
+  MASTER_TRACKID {A02903DA-8567-4151-81DF-7090779B9EDD}
+  MASTER_SEL 0
+  <MASTERPLAYSPEEDENV
+    EGUID {D26011CF-4FD5-4DD7-A3D9-5CEE28EEB9EE}
+    ACT 0 -1
+    VIS 0 1 1
+    LANEHEIGHT 0 0
+    ARM 0
+    DEFSHAPE 0 -1 -1
+  >
+  <TEMPOENVEX
+    EGUID {3634755C-5BF6-4CF5-B2CF-4EE2E26C2508}
+    ACT 1 -1
+    VIS 1 0 1
+    LANEHEIGHT 0 0
+    ARM 0
+    DEFSHAPE 1 -1 -1
+  >
+  RULERHEIGHT 86 86
+  RULERLANE 1 4 "" 0 -1 0
+  RULERLANE 2 8 "" 0 -1 0
+  <PROJBAY
+  >
+  <TRACK {26EA6291-6AE6-451A-84C4-7426A5C0D913}
+    NAME freesound_community-kaiju-lab-interior-ambience-1-75745
+    PEAKCOL 16576
+    BEAT -1
+    AUTOMODE 0
+    PANLAWFLAGS 3
+    VOLPAN 0.9368544752301 0 -1 -1 1
+    MUTESOLO 0 2 0
+    IPHASE 0
+    PLAYOFFS 0 1
+    ISBUS 0 0
+    BUSCOMP 0 0 0 0 0
+    SHOWINMIX 1 0.6667 0.5 1 0.5 0 0 0 0
+    FIXEDLANES 9 0 0 0 0
+    LANEREC -1 -1 -1 0
+    SEL 1
+    REC 0 1024 1 0 0 0 0 0
+    VU 64
+    TRACKHEIGHT 0 0 0 0 0 0 0
+    INQ 0 0 0 0.5 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {26EA6291-6AE6-451A-84C4-7426A5C0D913}
+    PERF 0
+    MIDIOUT -1 -1
+    MAINSEND 1 0
+    <FXCHAIN
+      SHOW 0
+      LASTSEL 0
+      DOCKED 0
+    >
+    <ITEM
+      POSITION 0
+      SNAPOFFS 0
+      LENGTH 38
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0 0 1 0 0 1 0 0
+      FADEOUT 1 0.01 0 1 0 0 0 1 0 0 1 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {725F75CF-6134-41A9-96FB-B57C8E25FCF0}
+      IID 1
+      NAME freesound_community-kaiju-lab-interior-ambience-1-75745.mp3
+      VOLPAN 1 0 1 -1
+      SOFFS 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {3BB9F561-2E2B-4D3C-AAA0-0E900C07805C}
+      <SOURCE MP3
+        FILE "Media\freesound_community-kaiju-lab-interior-ambience-1-75745.mp3" 1
+      >
+      <EXT
+        ORIGINAL_FILENAME C:\Users\Demivan\Downloads\freesound_community-kaiju-lab-interior-ambience-1-75745.mp3
+      >
+    >
+    <ITEM
+      POSITION 38
+      SNAPOFFS 0
+      LENGTH 66
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0.01 0 1 0 0 0 1 0 0 1 0 0
+      FADEOUT 1 0 0 1 0 0 0 1 0 0 1 0 0
+      MUTE 0 0
+      SEL 1
+      IGUID {C85B7ABC-F22E-4766-8039-3A07E38BDAF5}
+      IID 8
+      NAME freesound_community-kaiju-lab-interior-ambience-1-75745.mp3
+      VOLPAN 1 0 1 -1
+      SOFFS 38.04634920634921
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {2A4F8981-B184-4107-ACD0-5403E3F47D9F}
+      <SOURCE MP3
+        FILE "Media\freesound_community-kaiju-lab-interior-ambience-1-75745.mp3" 1
+      >
+      <EXT
+        ORIGINAL_FILENAME C:\Users\Demivan\Downloads\freesound_community-kaiju-lab-interior-ambience-1-75745.mp3
+      >
+    >
+  >
+  <TRACK {A8DD54DF-076C-4719-A646-B795C2E4D30F}
+    NAME freesound_community-pasos-steps-40285
+    PEAKCOL 16576
+    BEAT -1
+    AUTOMODE 0
+    PANLAWFLAGS 3
+    VOLPAN 0.39600150758095 0 -1 -1 1
+    MUTESOLO 0 2 0
+    IPHASE 0
+    PLAYOFFS 0 1
+    ISBUS 0 0
+    BUSCOMP 0 0 0 0 0
+    SHOWINMIX 1 0.6667 0.5 1 0.5 0 0 0 0
+    FIXEDLANES 9 0 0 0 0
+    LANEREC -1 -1 -1 0
+    SEL 0
+    REC 0 0 1 0 0 0 0 0
+    VU 64
+    TRACKHEIGHT 0 0 0 0 0 0 0
+    INQ 0 0 0 0.5 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {A8DD54DF-076C-4719-A646-B795C2E4D30F}
+    PERF 0
+    MIDIOUT -1 -1
+    MAINSEND 1 0
+    <ITEM
+      POSITION 34.5
+      SNAPOFFS 0
+      LENGTH 15.5
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0 0 1 0 0 1 0 0
+      FADEOUT 1 0 0 1 0 0 0 1 0 0 1 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {1E92F6A7-8FD7-4455-9C85-1FB6D2B46995}
+      IID 2
+      NAME freesound_community-pasos-steps-40285.mp3
+      VOLPAN 1 0 1 -1
+      SOFFS 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {C710CC05-6024-477F-8474-5A5504041951}
+      <SOURCE MP3
+        FILE "Media\freesound_community-pasos-steps-40285.mp3" 1
+      >
+      <EXT
+        ORIGINAL_FILENAME C:\Users\Demivan\Downloads\freesound_community-pasos-steps-40285.mp3
+      >
+    >
+  >
+  <TRACK {3E6546DD-3F4A-48D7-96D6-DDFA239F6B22}
+    NAME ""
+    PEAKCOL 16576
+    BEAT -1
+    AUTOMODE 0
+    PANLAWFLAGS 3
+    VOLPAN 0.34704451744783 0 -1 -1 1
+    MUTESOLO 0 2 0
+    IPHASE 0
+    PLAYOFFS 0 1
+    ISBUS 0 0
+    BUSCOMP 0 0 0 0 0
+    SHOWINMIX 1 0.6667 0.5 1 0.5 0 0 0 0
+    FIXEDLANES 9 0 0 0 0
+    SEL 0
+    REC 0 0 1 0 0 0 0 0
+    VU 64
+    TRACKHEIGHT 0 0 0 0 0 0 0
+    INQ 0 0 0 0.5 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {3E6546DD-3F4A-48D7-96D6-DDFA239F6B22}
+    PERF 0
+    MIDIOUT -1 -1
+    MAINSEND 1 0
+    <ITEM
+      POSITION 13.5
+      SNAPOFFS 0
+      LENGTH 15.5
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0 0 1 0 0 1 0 0
+      FADEOUT 1 0 0 1 0 0 0 1 0 0 1 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {98CE16C3-F49C-4BE8-9EFD-5460C7CAD209}
+      IID 2
+      NAME freesound_community-pasos-steps-40285.mp3
+      VOLPAN 1 0 1 -1
+      SOFFS 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {A644F47B-41B8-4399-B66F-8EFCC9E89BF3}
+      <SOURCE MP3
+        FILE "Media\freesound_community-pasos-steps-40285.mp3" 1
+      >
+      <EXT
+        ORIGINAL_FILENAME C:\Users\Demivan\Downloads\freesound_community-pasos-steps-40285.mp3
+      >
+    >
+    <ITEM
+      POSITION 58.5
+      SNAPOFFS 0
+      LENGTH 15.5
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0 0 1 0 0 1 0 0
+      FADEOUT 1 0 0 1 0 0 0 1 0 0 1 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {B714C356-1454-4208-8BE2-9883D7CB1648}
+      IID 2
+      NAME freesound_community-pasos-steps-40285.mp3
+      VOLPAN 1 0 1 -1
+      SOFFS 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {D1956728-B363-4BF9-B4DD-852FEA99972F}
+      <SOURCE MP3
+        FILE "Media\freesound_community-pasos-steps-40285.mp3" 1
+      >
+      <EXT
+        ORIGINAL_FILENAME C:\Users\Demivan\Downloads\freesound_community-pasos-steps-40285.mp3
+      >
+    >
+  >
+  <TRACK {FD4DAED8-E3D7-4E89-AB5D-E043B94BBF32}
+    NAME alex_jauk-ventilation-ambience-221710
+    PEAKCOL 16576
+    BEAT -1
+    AUTOMODE 0
+    PANLAWFLAGS 3
+    VOLPAN 1.58799079112731 0 -1 -1 1
+    MUTESOLO 0 2 0
+    IPHASE 0
+    PLAYOFFS 0 1
+    ISBUS 0 0
+    BUSCOMP 0 0 0 0 0
+    SHOWINMIX 1 0.6667 0.5 1 0.5 0 0 0 0
+    FIXEDLANES 9 0 0 0 0
+    SEL 0
+    REC 0 0 1 0 0 0 0 0
+    VU 64
+    TRACKHEIGHT 0 0 0 0 0 0 0
+    INQ 0 0 0 0.5 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {FD4DAED8-E3D7-4E89-AB5D-E043B94BBF32}
+    PERF 0
+    MIDIOUT -1 -1
+    MAINSEND 1 0
+    <ITEM
+      POSITION 13.5
+      SNAPOFFS 0
+      LENGTH 90.5
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0 0 1 0 0 1 0 0
+      FADEOUT 1 0 0 1 0 0 0 1 0 0 1 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {F3F2C561-36E5-467B-8C32-E1DC7437D00D}
+      IID 6
+      NAME alex_jauk-ventilation-ambience-221710.mp3
+      VOLPAN 1 0 1 -1
+      SOFFS 13.5
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {ACEAA980-1C7A-4F45-A2E8-F145FDAE1726}
+      <SOURCE MP3
+        FILE "Media\alex_jauk-ventilation-ambience-221710.mp3" 1
+      >
+      <EXT
+        ORIGINAL_FILENAME C:\Users\Demivan\Downloads\alex_jauk-ventilation-ambience-221710.mp3
+      >
+    >
+  >
+  <TRACK {04C19001-28B2-4D38-A1B0-3889EFAAFB6A}
+    NAME freesound_community-laboratory-plasmaphysics-53803
+    PEAKCOL 16576
+    BEAT -1
+    AUTOMODE 0
+    PANLAWFLAGS 3
+    VOLPAN 0.09890631278077 0 -1 -1 1
+    MUTESOLO 0 2 0
+    IPHASE 0
+    PLAYOFFS 0 1
+    ISBUS 0 0
+    BUSCOMP 0 0 0 0 0
+    SHOWINMIX 1 0.6667 0.5 1 0.5 0 0 0 0
+    FIXEDLANES 9 0 0 0 0
+    SEL 0
+    REC 0 0 1 0 0 0 0 0
+    VU 64
+    TRACKHEIGHT 0 0 0 0 0 0 0
+    INQ 0 0 0 0.5 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {04C19001-28B2-4D38-A1B0-3889EFAAFB6A}
+    PERF 0
+    MIDIOUT -1 -1
+    MAINSEND 1 0
+    <ITEM
+      POSITION 0
+      SNAPOFFS 0
+      LENGTH 13.5
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0 0 1 0 0 1 0 0
+      FADEOUT 1 0 0 1 0 0 0 1 0 0 1 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {7F0E5D3D-A7C7-40B0-8CA3-E5541193D538}
+      IID 9
+      NAME freesound_community-laboratory-plasmaphysics-53803.mp3
+      VOLPAN 1 0 1 -1
+      SOFFS 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {8E0D2E31-0C72-4737-8B64-3B12C78CA9C0}
+      <SOURCE MP3
+        FILE "Media\freesound_community-laboratory-plasmaphysics-53803.mp3" 1
+      >
+      <EXT
+        ORIGINAL_FILENAME C:\Users\Demivan\Downloads\freesound_community-laboratory-plasmaphysics-53803.mp3
+      >
+    >
+    <ITEM
+      POSITION 74
+      SNAPOFFS 0
+      LENGTH 30
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0 0 1 0 0 1 0 0
+      FADEOUT 1 0 0 1 0 0 0 1 0 0 1 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {2513C4BA-EF25-4132-AAFF-5AB2CCEC8BD9}
+      IID 9
+      NAME freesound_community-laboratory-plasmaphysics-53803.mp3
+      VOLPAN 1 0 1 -1
+      SOFFS 23.5
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {CD2E9473-6CA1-44B1-B1E5-3442471CC880}
+      <SOURCE MP3
+        FILE "Media\freesound_community-laboratory-plasmaphysics-53803.mp3" 1
+      >
+      <EXT
+        ORIGINAL_FILENAME C:\Users\Demivan\Downloads\freesound_community-laboratory-plasmaphysics-53803.mp3
+      >
+    >
+  >
+  <TRACK {1C188FF1-8F79-4DB2-B678-06D1ECBF6423}
+    NAME ""
+    PEAKCOL 16576
+    BEAT -1
+    AUTOMODE 0
+    PANLAWFLAGS 3
+    VOLPAN 1 0 -1 -1 1
+    MUTESOLO 0 0 0
+    IPHASE 0
+    PLAYOFFS 0 1
+    ISBUS 0 0
+    BUSCOMP 0 0 0 0 0
+    SHOWINMIX 1 0.6667 0.5 1 0.5 0 0 0 0
+    FIXEDLANES 9 0 0 0 0
+    SEL 0
+    REC 0 0 1 0 0 0 0 0
+    VU 64
+    TRACKHEIGHT 0 0 0 0 0 0 0
+    INQ 0 0 0 0.5 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {1C188FF1-8F79-4DB2-B678-06D1ECBF6423}
+    PERF 0
+    MIDIOUT -1 -1
+    MAINSEND 1 0
+  >
+>
