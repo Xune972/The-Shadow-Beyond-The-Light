@@ -1,16 +1,11 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class LevelSnapshot : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [Header("Snapshot de los niveles")]
+    public AudioMixerSnapshot levelSnapshot;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [Header("Transición")]
+    public float fadeTime = 2f;
 }
