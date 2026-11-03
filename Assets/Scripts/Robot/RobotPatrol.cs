@@ -53,6 +53,9 @@ public class RobotPatrol : MonoBehaviour
     public AudioClip stepsChaseClip;
     public float minMoveSpeed = 0.1f;
 
+    [Header("Snapshot")]                                  // <-- NUEVO (Por: Giu)
+    public ChaseSnapshotTrigger chaseSnapshotTrigger;    // <-- Lo mismo de arriba
+
     private State currentState = State.Patrol;
     private Transform target;
     private float alertTimer;
@@ -95,6 +98,10 @@ public class RobotPatrol : MonoBehaviour
 
     private void Start()
     {
+        // Busca el controlador de snapshot si no se asignó a manualmente // <-- NUEVO
+        if (chaseSnapshotTrigger == null)                            // <-- NUEVO
+            chaseSnapshotTrigger = FindFirstObjectByType<ChaseSnapshotTrigger>(); // <-- NUEVO (Por: Giu
+
         if (agent == null)
             agent = GetComponent<NavMeshAgent>();
 
@@ -274,6 +281,10 @@ public class RobotPatrol : MonoBehaviour
 
             currentState = State.Chase;
             SetAudioMode(true);
+
+            if (chaseSnapshotTrigger != null)                // <-- NUEVO
+                chaseSnapshotTrigger.ActivateChase();        // <-- Giu estuvo aqui
+
             agent.isStopped = false;
             agent.speed = agent.speed;
 
@@ -404,6 +415,9 @@ public class RobotPatrol : MonoBehaviour
 
     private void KillPlayer()
     {
+        if (chaseSnapshotTrigger != null)                    // <-- NUEVO
+            chaseSnapshotTrigger.ResetToMusic();             // <-- Giu estuvo aqui
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
