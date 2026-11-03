@@ -10433,7 +10433,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   characterSwitcher: {fileID: 783611393}
   nextEscene: Level 2
-  disableCharacter: 1
+  disableCharacter: 0
   mesajeForCharacter: {fileID: 0}
 --- !u!4 &1344588283
 Transform:
