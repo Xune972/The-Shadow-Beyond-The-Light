@@ -336,7 +336,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 7978870795209788926, guid: 6e50b1d57f65f2d44aa714e21ffb2dc8, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 390263796eea9d8418ac36276fcbf78f, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -11573,15 +11573,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4366992240936341214, guid: 53ab8cdcf173c734e8ae9f73c6733dc3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 40.95
+      value: -9.4
       objectReference: {fileID: 0}
     - target: {fileID: 4366992240936341214, guid: 53ab8cdcf173c734e8ae9f73c6733dc3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 41.77
+      value: -1.39
       objectReference: {fileID: 0}
     - target: {fileID: 4366992240936341214, guid: 53ab8cdcf173c734e8ae9f73c6733dc3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 29.75
+      value: 73.12
       objectReference: {fileID: 0}
     - target: {fileID: 4366992240936341214, guid: 53ab8cdcf173c734e8ae9f73c6733dc3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -16109,6 +16109,7 @@ MonoBehaviour:
   stepsPatrolClip: {fileID: 8300000, guid: 2777fbc0a95e10f49bd3c0e62b13b8f3, type: 3}
   stepsChaseClip: {fileID: 8300000, guid: e0cf88a771e315744896a5f80f3039e1, type: 3}
   minMoveSpeed: 0.1
+  chaseSnapshotTrigger: {fileID: 31210202}
 --- !u!136 &1176903349
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -20618,6 +20619,7 @@ MonoBehaviour:
   stepsPatrolClip: {fileID: 8300000, guid: 2777fbc0a95e10f49bd3c0e62b13b8f3, type: 3}
   stepsChaseClip: {fileID: 8300000, guid: e0cf88a771e315744896a5f80f3039e1, type: 3}
   minMoveSpeed: 0.1
+  chaseSnapshotTrigger: {fileID: 0}
 --- !u!4 &1447312755 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 519e4c35a01b5ed408c9d1d62281ec19, type: 3}
