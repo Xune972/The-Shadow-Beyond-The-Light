@@ -2,16 +2,18 @@ using UnityEngine;
 
 public class RobotTensionAudio : MonoBehaviour
 {
-    public RobotPatrol robot;
-    public Transform jugador;
+    public RobotPatrol[] robots;
     public AudioSource musicaTension;
 
+    [Header("Distancias")]
     public float distanciaLejana = 20f;
     public float distanciaCercana = 2f;
 
+    [Header("Volumen")]
     public float volumenNormal = 0.1f;
     public float volumenMaximo = 0.85f;
 
+    [Header("Pitch")]
     public float pitchNormal = 1f;
     public float pitchMaximo = 1.18f;
 
@@ -19,46 +21,70 @@ public class RobotTensionAudio : MonoBehaviour
 
     void Start()
     {
-        if (musicaTension != null)
-        {
-            musicaTension.loop = true;
-            musicaTension.volume = volumenNormal;
-            musicaTension.pitch = pitchNormal;
-            musicaTension.Play();
-        }
+        if (musicaTension == null) return;
+
+        musicaTension.loop = true;
+        musicaTension.volume = volumenNormal;
+        musicaTension.pitch = pitchNormal;
+        musicaTension.Play();
     }
 
     void Update()
     {
-        if (robot == null || jugador == null ||
-            musicaTension == null)
-            return;
+        if (musicaTension == null) return;
 
-        float volumenObjetivo = volumenNormal;
-        float pitchObjetivo = pitchNormal;
+        float distanciaMinima = distanciaLejana;
+        bool hayPersecucion = false;
 
-        if (robot.EstaPersiguiendo)
+        foreach (RobotPatrol robot in robots)
         {
+            if (robot == null || !robot.EstaPersiguiendo)
+                continue;
+
+            Transform objetivo = robot.ObjetivoActual;
+
+            if (objetivo == null) continue;
+
             float distancia = Vector3.Distance(
-                jugador.position, robot.transform.position);
+                robot.transform.position,
+                objetivo.position
+            );
 
-            float intensidad = Mathf.InverseLerp(
-                distanciaLejana, distanciaCercana, distancia);
+            if (!hayPersecucion || distancia < distanciaMinima)
+                distanciaMinima = distancia;
 
-            volumenObjetivo = Mathf.Lerp(
-                volumenNormal, volumenMaximo, intensidad);
-
-            pitchObjetivo = Mathf.Lerp(
-                pitchNormal, pitchMaximo, intensidad);
+            hayPersecucion = true;
         }
 
+        float intensidad = 0f;
+
+        if (hayPersecucion)
+        {
+            intensidad = Mathf.InverseLerp(
+                distanciaLejana,
+                distanciaCercana,
+                distanciaMinima
+            );
+        }
+
+        float volumenObjetivo = Mathf.Lerp(
+            volumenNormal, volumenMaximo, intensidad
+        );
+
+        float pitchObjetivo = Mathf.Lerp(
+            pitchNormal, pitchMaximo, intensidad
+        );
+
         musicaTension.volume = Mathf.Lerp(
-            musicaTension.volume, volumenObjetivo,
-            Time.deltaTime * velocidadCambio);
+            musicaTension.volume,
+            volumenObjetivo,
+            Time.deltaTime * velocidadCambio
+        );
 
         musicaTension.pitch = Mathf.Lerp(
-            musicaTension.pitch, pitchObjetivo,
-            Time.deltaTime * velocidadCambio);
+            musicaTension.pitch,
+            pitchObjetivo,
+            Time.deltaTime * velocidadCambio
+        );
     }
-
 }

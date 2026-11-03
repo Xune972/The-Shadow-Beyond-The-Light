@@ -13,6 +13,7 @@ public class RobotPatrol : MonoBehaviour
     }
 
     public bool EstaPersiguiendo => currentState == State.Chase;
+    public Transform ObjetivoActual => target;
 
     [Header("Collision")]
     private bool isDestroyed = false;
