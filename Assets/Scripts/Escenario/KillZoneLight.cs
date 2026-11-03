@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem.Controls;
 
 public class KillZoneLight : MonoBehaviour
 {
@@ -29,6 +30,7 @@ public class KillZoneLight : MonoBehaviour
     {
         Rigidbody rb = player.GetComponent<Rigidbody>();
         CharacterMovement movement = player.GetComponent<CharacterMovement>();
+        bool hadControl = movement != null && movement.ControlsEnabled;
 
         // 1. Bloquear controles
         if (movement != null)
@@ -64,9 +66,7 @@ public class KillZoneLight : MonoBehaviour
         }
 
         if (movement != null)
-        {
-            movement.SetControlsEnabled(true);
-        }
+            movement.SetControlsEnabled(hadControl);
     }
 
     private void OnDrawGizmos()

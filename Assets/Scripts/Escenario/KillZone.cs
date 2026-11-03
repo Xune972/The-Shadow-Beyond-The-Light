@@ -20,7 +20,7 @@ public class KillZone : MonoBehaviour
         }
     }
 
-    private void RespawnPlayer(GameObject player)
+    public void RespawnPlayer(GameObject player)
     {
         StartCoroutine(RespawnRoutine(player));
     }
@@ -29,6 +29,7 @@ public class KillZone : MonoBehaviour
     {
         Rigidbody rb = player.GetComponent<Rigidbody>();
         CharacterMovement movement = player.GetComponent<CharacterMovement>();
+        bool hadControl = movement != null && movement.ControlsEnabled;
 
         // 1. Bloquear controles
         if (movement != null)
@@ -64,9 +65,7 @@ public class KillZone : MonoBehaviour
         }
 
         if (movement != null)
-        {
-            movement.SetControlsEnabled(true);
-        }
+            movement.SetControlsEnabled(hadControl);
     }
 
     private void OnDrawGizmos()
