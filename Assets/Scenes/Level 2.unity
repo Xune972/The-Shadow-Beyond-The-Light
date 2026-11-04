@@ -5495,9 +5495,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ef7237cbf7beab43a1cf99af50db872, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  characterSwitcher: {fileID: 957741878}
+  characterSwitcher: {fileID: 1050020762}
   nextEscene: Level 3 y 4
-  disableCharacter: 0
+  disableCharacter: 1
   mesajeForCharacter: {fileID: 1493216216}
 --- !u!4 &607163829
 Transform:
@@ -9689,7 +9689,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 238737890}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 328946428272559578, guid: dc8c1ecef5af0d641b0b8e1ba10c07e2, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3851166226648516507, guid: dc8c1ecef5af0d641b0b8e1ba10c07e2, type: 3}
       insertIndex: 0
@@ -9717,17 +9718,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3851166226648516507, guid: dc8c1ecef5af0d641b0b8e1ba10c07e2, type: 3}
   m_PrefabInstance: {fileID: 957741874}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &957741878 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7063631969320008022, guid: dc8c1ecef5af0d641b0b8e1ba10c07e2, type: 3}
-  m_PrefabInstance: {fileID: 957741874}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91a4d07843ed23c4383f66be1db8adeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CharacterSwitcher
 --- !u!4 &957741879 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5487212338532274890, guid: dc8c1ecef5af0d641b0b8e1ba10c07e2, type: 3}
@@ -11135,6 +11125,90 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!1 &1050020759
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1050020763}
+  - component: {fileID: 1050020762}
+  - component: {fileID: 1050020761}
+  - component: {fileID: 1050020760}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1050020760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050020759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d1dcdf315680684eabb96c1e4334dfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShadowLightReactor
+  lightsToWatch:
+  - {fileID: 0}
+--- !u!114 &1050020761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050020759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfc993e9108c83e46adbe9cb2d26b1b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraTargetSwitcher
+  orbitPivot: {fileID: 1409941441}
+  horizontalSensitivity: 600
+  verticalSensitivity: 480
+  minimumPitch: -30
+  maximumPitch: 70
+  lockCursor: 1
+--- !u!114 &1050020762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050020759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91a4d07843ed23c4383f66be1db8adeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterSwitcher
+  characters:
+  - {fileID: 980414583}
+  - {fileID: 957741876}
+  startingCharacterIndex: 0
+  cameraTargetSwitcher: {fileID: 1050020761}
+  switchKey: 9
+--- !u!4 &1050020763
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050020759}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 6.22925, y: 7.91, z: 17.381437}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1058637080
 GameObject:
   m_ObjectHideFlags: 0
@@ -11517,7 +11591,7 @@ AudioSource:
   m_GameObject: {fileID: 1059907081}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -7443250545645891140, guid: 6e50b1d57f65f2d44aa714e21ffb2dc8, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: a513679039a105f46b3b6a14a7bc443f, type: 3}
   m_PlayOnAwake: 1
@@ -23837,3 +23911,4 @@ SceneRoots:
   - {fileID: 1948544556}
   - {fileID: 1059907083}
   - {fileID: 336390742}
+  - {fileID: 1050020763}
