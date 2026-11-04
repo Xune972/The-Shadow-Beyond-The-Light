@@ -12,6 +12,9 @@ public class CharacterSwitcher : MonoBehaviour
     [Header("Input")]
     [SerializeField] private KeyCode switchKey = KeyCode.Tab;
 
+    [Header("Audio")]
+    [SerializeField] private SFXPlayer switchSfx;
+
     private int currentCharacterIndex;
     public int TotalCharacters => characters.Length;
 
@@ -48,6 +51,8 @@ public class CharacterSwitcher : MonoBehaviour
 
     private void SwitchCharacter()
     {
+        int previousIndex = currentCharacterIndex;
+
         int trys = 0;
         do
         {
@@ -57,6 +62,9 @@ public class CharacterSwitcher : MonoBehaviour
         while (!characters[currentCharacterIndex].gameObject.activeSelf); // Busca un pj activo para hacer el cambio
 
         UpdateActiveCharacter();
+
+        if (currentCharacterIndex != previousIndex && switchSfx != null)
+            switchSfx.Play();
     }
 
     private void UpdateActiveCharacter()
