@@ -157,9 +157,7 @@ public class ShadowPlayerHealth : MonoBehaviour
 
         // Reutilizar el Respawn limpio configurado en la KillZone
         if (killZone != null)
-        {
-            killZone.SendMessage("RespawnPlayer", gameObject, SendMessageOptions.DontRequireReceiver);
-        }
+            killZone.RespawnPlayer(gameObject);
         else
         {
             Debug.LogWarning("No se encontró la KillZone para procesar el Respawn por luz.", this);
