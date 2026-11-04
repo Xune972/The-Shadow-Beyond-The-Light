@@ -337,7 +337,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 390263796eea9d8418ac36276fcbf78f, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -11559,6 +11559,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerLight
       objectReference: {fileID: 0}
+    - target: {fileID: 1002330439612354934, guid: 53ab8cdcf173c734e8ae9f73c6733dc3, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4366992240936341214, guid: 53ab8cdcf173c734e8ae9f73c6733dc3, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
@@ -21374,6 +21378,10 @@ PrefabInstance:
       propertyPath: orbitPivot
       value: 
       objectReference: {fileID: 1321683910}
+    - target: {fileID: 2833295103291486688, guid: dc8c1ecef5af0d641b0b8e1ba10c07e2, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2956634822180013241, guid: dc8c1ecef5af0d641b0b8e1ba10c07e2, type: 3}
       propertyPath: m_Constraints
       value: 112
@@ -21392,15 +21400,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3851166226648516507, guid: dc8c1ecef5af0d641b0b8e1ba10c07e2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 71.22
+      value: 61.05
       objectReference: {fileID: 0}
     - target: {fileID: 3851166226648516507, guid: dc8c1ecef5af0d641b0b8e1ba10c07e2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 44.9
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 3851166226648516507, guid: dc8c1ecef5af0d641b0b8e1ba10c07e2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 23.06
+      value: 26.85
       objectReference: {fileID: 0}
     - target: {fileID: 3851166226648516507, guid: dc8c1ecef5af0d641b0b8e1ba10c07e2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -24407,10 +24415,10 @@ MonoBehaviour:
   musicaTension: {fileID: 31210200}
   distanciaLejana: 20
   distanciaCercana: 2
-  volumenNormal: 1
-  volumenMaximo: 1.5
+  volumenNormal: 0.2
+  volumenMaximo: 1
   pitchNormal: 1
-  pitchMaximo: 1.2
+  pitchMaximo: 2
   velocidadCambio: 3
 --- !u!1001 &1716893031
 PrefabInstance:
