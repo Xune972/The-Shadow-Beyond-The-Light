@@ -48,6 +48,20 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!244 &-7252286652225200253
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 29b7ea26636a5434fba3ae848dd25cd4
+  m_EffectName: Attenuation
+  m_MixLevel: 70527264c654e364da2febf00a1129bc
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!243 &-7184258756411367173
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -239,6 +253,25 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!243 &-2165811640700480477
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Calm
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: a0cc3a3061c1a4147887cc14e4f371b2
+  m_Children: []
+  m_Volume: 882c256e0cb86094bb962a8dadb2c15d
+  m_Pitch: 90ebb9dfca1161641bf0a1589be17d2b
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -7252286652225200253}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!245 &-1988166326288348903
 AudioMixerSnapshotController:
   m_ObjectHideFlags: 0
@@ -363,9 +396,10 @@ AudioMixerController:
     - ce950d0c652005c4cbd2be68214e0821
     - 9e617098a94425846b94e737db802c99
     - 2b11fd6408034724eb5bc8b53e58747f
+    - a0cc3a3061c1a4147887cc14e4f371b2
     name: View
   m_CurrentViewIndex: 0
-  m_TargetSnapshot: {fileID: 24500006}
+  m_TargetSnapshot: {fileID: -1988166326288348903}
 --- !u!243 &24300002
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -377,6 +411,7 @@ AudioMixerGroupController:
   m_GroupID: 327fbd89cff3d584c9589eb3406f92f6
   m_Children:
   - {fileID: -7184258756411367173}
+  - {fileID: -2165811640700480477}
   - {fileID: 7978870795209788926}
   - {fileID: -142269465508330550}
   - {fileID: -7443250545645891140}
