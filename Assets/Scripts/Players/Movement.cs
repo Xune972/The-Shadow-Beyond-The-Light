@@ -25,6 +25,8 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private KeyCode jumpKey = KeyCode.Space;
 
     [Header("Animation")]
+    [Header("Audio")]
+    [SerializeField] private SFXPlayer jumpSfx;
     [SerializeField] private Animator animator;
     private static readonly int SpeedHash = Animator.StringToHash("Speed");
     private static readonly int IsGroundedHash = Animator.StringToHash("IsGrounded");
@@ -191,6 +193,9 @@ public class CharacterMovement : MonoBehaviour
             Vector3.up * jumpForce,
             ForceMode.Impulse
         );
+
+        if (jumpSfx != null)
+            jumpSfx.Play();
 
         if (animator != null)
             animator.SetTrigger(JumpHash);
