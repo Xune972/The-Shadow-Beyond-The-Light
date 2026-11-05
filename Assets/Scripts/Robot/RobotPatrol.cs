@@ -417,7 +417,7 @@ public class RobotPatrol : MonoBehaviour
     private void KillPlayer()
     {
         if (chaseSnapshotTrigger != null)                    // <-- NUEVO
-            chaseSnapshotTrigger.ResetToMusic();             // <-- Giu estuvo aqui
+            chaseSnapshotTrigger.ResetToCalm();             // <-- Giu estuvo aqui
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
