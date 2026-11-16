@@ -12,6 +12,9 @@ public class NoteInteractable : MonoBehaviour
     [SerializeField] private GameObject interactPrompt; // Ej: "Presioná E"
     [SerializeField] private GameObject notePanel;      // Panel con el texto de la nota
 
+    [Header("Contador")]
+    [SerializeField] private string zoneId = "Zona1";
+
     [Header("Interacción")]
     [SerializeField] private KeyCode interactKey = KeyCode.E;
     [SerializeField] private string playerTag = "Shadow"; // Tag del personaje de sombra
@@ -35,6 +38,7 @@ public class NoteInteractable : MonoBehaviour
 
         if (interactPrompt != null) interactPrompt.SetActive(false);
         if (notePanel != null) notePanel.SetActive(false);
+        NoteProgress.Register(this, zoneId);
     }
 
     private void Update()
@@ -66,6 +70,7 @@ public class NoteInteractable : MonoBehaviour
     private void OpenNote()
     {
         isOpen = true;
+        NoteProgress.Collect(this);
 
         if (interactPrompt != null) interactPrompt.SetActive(false);
         if (notePanel != null) notePanel.SetActive(true);
@@ -93,6 +98,11 @@ public class NoteInteractable : MonoBehaviour
 
         if (freezePlayerWhileOpen && player != null)
             player.SetControlsEnabled(true);
+    }
+
+    private void OnDestroy()
+    {
+        NoteProgress.Unregister(this);
     }
 
     private void OnTriggerEnter(Collider other)
