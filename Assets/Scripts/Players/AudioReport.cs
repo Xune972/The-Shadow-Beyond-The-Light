@@ -11,7 +11,7 @@ public class No : MonoBehaviour
     }
     void Update()
     {
-       if(nearbyPlayer&&Input.GetKeyDown(KeyCode.R))
+       if(nearbyPlayer&&Input.GetKeyDown(KeyCode.E))
         {
             if(Note.activeSelf==false)
             {
