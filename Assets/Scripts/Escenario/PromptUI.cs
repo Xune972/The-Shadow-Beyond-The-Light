@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -10,8 +11,8 @@ public class PromptUI : MonoBehaviour
 
     [SerializeField] private TMP_Text label;
 
-  
-    private Object currentOwner;
+    private readonly List<Object> owners = new List<Object>();
+    private readonly List<string> messages = new List<string>();
 
     private void Awake()
     {
@@ -21,16 +22,37 @@ public class PromptUI : MonoBehaviour
 
     public void Show(Object owner, string message)
     {
-        currentOwner = owner;
-        if (label != null) label.text = message;
-        if (panel != null) panel.SetActive(true);
+        int i = owners.IndexOf(owner);
+        if (i >= 0)
+        {
+            owners.RemoveAt(i);
+            messages.RemoveAt(i);
+        }
+
+        owners.Add(owner);
+        messages.Add(message);
+        Refresh();
     }
 
- 
     public void Hide(Object owner)
     {
-        if (currentOwner != owner) return;
-        currentOwner = null;
-        if (panel != null) panel.SetActive(false);
+        int i = owners.IndexOf(owner);
+        if (i < 0) return;
+
+        owners.RemoveAt(i);
+        messages.RemoveAt(i);
+        Refresh();
+    }
+
+    private void Refresh()
+    {
+        if (owners.Count == 0)
+        {
+            if (panel != null) panel.SetActive(false);
+            return;
+        }
+
+        if (label != null) label.text = messages[messages.Count - 1];
+        if (panel != null) panel.SetActive(true);
     }
 }
