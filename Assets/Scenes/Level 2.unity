@@ -2285,7 +2285,7 @@ GameObject:
   - component: {fileID: 392229890}
   - component: {fileID: 392229889}
   m_Layer: 0
-  m_Name: Zona2
+  m_Name: NoteZone2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16736,7 +16736,7 @@ GameObject:
   - component: {fileID: 1634917972}
   - component: {fileID: 1634917971}
   m_Layer: 0
-  m_Name: Canvas
+  m_Name: NotasUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
