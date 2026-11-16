@@ -955,7 +955,7 @@ GameObject:
   - component: {fileID: 230556707}
   - component: {fileID: 230556706}
   m_Layer: 5
-  m_Name: UINotas
+  m_Name: NotasUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7225,7 +7225,7 @@ GameObject:
   - component: {fileID: 1072693292}
   - component: {fileID: 1072693291}
   m_Layer: 0
-  m_Name: Zone1
+  m_Name: NoteZone1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
