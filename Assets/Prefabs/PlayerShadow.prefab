@@ -52,6 +52,7 @@ MonoBehaviour:
   startingCharacterIndex: 0
   cameraTargetSwitcher: {fileID: 75044048281732236}
   switchKey: 9
+  switchSfx: {fileID: 0}
 --- !u!114 &75044048281732236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -341,7 +342,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7407811212762260166}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: a42415e6bec8bcf4b819978944e34328, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -411,6 +412,7 @@ MonoBehaviour:
     m_Bits: 192
   runKey: 304
   jumpKey: 32
+  jumpSfx: {fileID: 0}
   animator: {fileID: 0}
 --- !u!114 &8617449243372631274
 MonoBehaviour:
