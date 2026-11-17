@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class CharacterSwitcher : MonoBehaviour
@@ -20,6 +21,8 @@ public class CharacterSwitcher : MonoBehaviour
 
     public CharacterMovement ActiveCharacter =>
         characters[currentCharacterIndex];
+    public event Action<int> OnCharacterChanged;
+    public int CurrentIndex => currentCharacterIndex;
 
     private void Awake()
     {
@@ -78,7 +81,7 @@ public class CharacterSwitcher : MonoBehaviour
                 i == currentCharacterIndex
             );
         }
-
+        OnCharacterChanged?.Invoke(currentCharacterIndex);
         UpdateCameraTarget();
     }
 

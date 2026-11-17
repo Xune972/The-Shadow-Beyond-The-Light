@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -29,7 +30,9 @@ public class ShadowPlayerHealth : MonoBehaviour
     [SerializeField] private Vector2 pitchRange = new Vector2(1f, 1.4f);   // el latido se acelera
     [SerializeField] private float fadeSpeed = 4f;
 
-    private float heartbeatFade;        
+    private float heartbeatFade;
+    public event Action<float> OnHealthChanged;
+    public float HealthPercent => currentHealth / maxHealth;
 
     public float CurrentHealth => currentHealth;
 
@@ -112,6 +115,8 @@ public class ShadowPlayerHealth : MonoBehaviour
 
     private void HandleHealthAndFade()
     {
+        float before = currentHealth;
+
         // 1. Modificar la vida progresivamente
         if (isExposedToLight)
         {
@@ -124,6 +129,11 @@ public class ShadowPlayerHealth : MonoBehaviour
 
         // Limitar el rango entre 0 y el máximo
         currentHealth = Mathf.Clamp(currentHealth, 0f, maxHealth);
+
+        if (!Mathf.Approximately(before, currentHealth))
+        {
+            OnHealthChanged?.Invoke(HealthPercent);
+        }
 
         // 2. Modificar el Alpha (transparencia) del material
         UpdateMaterialAlpha();
@@ -154,6 +164,8 @@ public class ShadowPlayerHealth : MonoBehaviour
         UpdateMaterialAlpha();
         heartbeatFade = 0f;
         if (heartbeatSource != null) heartbeatSource.Stop();
+
+        OnHealthChanged?.Invoke(HealthPercent);
 
         // Reutilizar el Respawn limpio configurado en la KillZone
         if (killZone != null)

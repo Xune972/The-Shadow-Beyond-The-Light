@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 6231938341248273045}
   - component: {fileID: 331570721025404999}
   - component: {fileID: 1909524740305667553}
+  - component: {fileID: 5110220640960718408}
   m_Layer: 0
   m_Name: PlayerLight
   m_TagString: Player
@@ -177,6 +178,7 @@ MonoBehaviour:
     m_Bits: 8
   runKey: 304
   jumpKey: 32
+  jumpSfx: {fileID: 0}
   animator: {fileID: 0}
 --- !u!135 &9218730801383426388
 SphereCollider:
@@ -332,6 +334,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5110220640960718408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936472424738445496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39ecca7b8944e6a45999127930a8b32f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DamagingLight
+  source: {fileID: 8924297881171966855}
 --- !u!1 &1002330439612354934
 GameObject:
   m_ObjectHideFlags: 0
