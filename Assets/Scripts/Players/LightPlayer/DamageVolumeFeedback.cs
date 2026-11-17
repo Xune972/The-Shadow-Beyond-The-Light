@@ -6,8 +6,8 @@ public class DamageVolumeFeedback : MonoBehaviour
 {
     [SerializeField] private Volume volume;
     [SerializeField] private ShadowPlayerHealth shadowHealth;
-    [SerializeField] private Vector2 vignetteRange = new Vector2(0.25f, 0.6f);
-    [SerializeField] private Vector2 aberrationRange = new Vector2(0f, 0.8f);
+    [SerializeField] private Vector2 vignetteRange = new Vector2(0.25f, 0.8f);
+    [SerializeField] private Vector2 aberrationRange = new Vector2(0f, 2f);
     [SerializeField] private float smooth = 6f;
 
     private Vignette vignette;
