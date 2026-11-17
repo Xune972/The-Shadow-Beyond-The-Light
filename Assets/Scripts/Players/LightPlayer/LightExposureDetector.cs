@@ -49,7 +49,10 @@ public class LightExposureDetector : MonoBehaviour
     private void RefrescarLuces()
     {
         luces.Clear();
-        luces.AddRange(FindObjectsByType<Light>(FindObjectsSortMode.None));
+        foreach (DamagingLight d in FindObjectsByType<DamagingLight>(FindObjectsSortMode.None))
+        {
+            if (d.Source != null) luces.Add(d.Source);
+        }
     }
 
     private bool ComprobarSiEstaIluminado()
