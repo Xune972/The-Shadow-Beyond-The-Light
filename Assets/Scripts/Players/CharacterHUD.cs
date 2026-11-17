@@ -7,7 +7,7 @@ public class CharacterHUD : MonoBehaviour
     [SerializeField] private Image portrait;
     [SerializeField] private Image healthFill;
     [SerializeField] private Sprite[] portraits; //mismo orden que los personajes del switcher
-
+    [SerializeField] private Image emptyBackground;
     private ShadowPlayerHealth current;
 
     private void OnEnable() => switcher.OnCharacterChanged += SetCharacter;
@@ -25,7 +25,7 @@ public class CharacterHUD : MonoBehaviour
 
         if (current != null) current.OnHealthChanged -= SetFill;
         current = switcher.ActiveCharacter.GetComponent<ShadowPlayerHealth>();
-
+        emptyBackground.enabled = current != null;
         if (current != null)
         {
             current.OnHealthChanged += SetFill;
