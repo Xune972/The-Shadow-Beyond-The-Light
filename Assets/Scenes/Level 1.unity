@@ -2080,7 +2080,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40c73cced7667434280fb3bada2f283b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NoteInteractable
-  noteAudio: {fileID: 0}
+  noteAudio: {fileID: 8300000, guid: 1e45be91c70414d45849b7c00c48f779, type: 3}
   stopAudioOnClose: 1
   playOnlyOnce: 0
   interactPrompt: {fileID: 1738878431}
@@ -12248,7 +12248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40c73cced7667434280fb3bada2f283b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NoteInteractable
-  noteAudio: {fileID: 0}
+  noteAudio: {fileID: 8300000, guid: 1e45be91c70414d45849b7c00c48f779, type: 3}
   stopAudioOnClose: 0
   playOnlyOnce: 0
   interactPrompt: {fileID: 1738878431}
