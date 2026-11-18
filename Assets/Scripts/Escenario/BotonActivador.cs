@@ -13,6 +13,9 @@ public class BotonActivador : MonoBehaviour
     [SerializeField] private KeyCode interactKey = KeyCode.E;
     [SerializeField] private bool onlyOnce = true;
 
+    [Header("Cartel (opcional)")]
+    [SerializeField] private GameObject interactPrompt;
+
     [Header("Eventos")]
     [SerializeField] private UnityEvent onPressed;
     [Tooltip("Solo se llama cuando el jugador sale del botón (útil para placas de presión).")]
@@ -27,6 +30,11 @@ public class BotonActivador : MonoBehaviour
         GetComponent<Collider>().isTrigger = true;
     }
 
+    private void Awake()
+    {
+        if (interactPrompt != null)
+            interactPrompt.SetActive(false);
+    }
     private void Update()
     {
         if (requireInteractKey && playerInside && Input.GetKeyDown(interactKey))
@@ -40,6 +48,8 @@ public class BotonActivador : MonoBehaviour
 
         playerInside = true;
 
+        if (interactPrompt != null) interactPrompt.SetActive(true);
+
         if (!requireInteractKey)
             Press();
     }
@@ -50,6 +60,9 @@ public class BotonActivador : MonoBehaviour
             return;
 
         playerInside = false;
+
+        if (interactPrompt != null) interactPrompt.SetActive(false);
+
         onReleased?.Invoke();
     }
 

@@ -16,6 +16,9 @@ public class PisoCorredizo : MonoBehaviour
     [Tooltip("Tag que debe tener el jugador para poder accionar este piso (solo el personaje sombra)")]
     public string tagJugadorPermitido = "ShadowPlayer";
 
+    [Header("Cartel (opcional)")]
+    [SerializeField] private GameObject interactPrompt;
+
     [Header("Sonidos")]
     [SerializeField] private AudioClip openClip;
     [SerializeField] private AudioClip closeClip;
@@ -34,6 +37,7 @@ public class PisoCorredizo : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         audioSource.playOnAwake = false;
+        if (interactPrompt != null) interactPrompt.SetActive(false);
     }
 
     void Start()
@@ -79,6 +83,7 @@ public class PisoCorredizo : MonoBehaviour
         if (other.CompareTag("Player") || other.CompareTag(tagJugadorPermitido))
         {
             jugadorCerca = true;
+            if (interactPrompt != null) interactPrompt.SetActive(true);
         }
     }
 
@@ -87,6 +92,7 @@ public class PisoCorredizo : MonoBehaviour
         if (other.CompareTag("Player") || other.CompareTag(tagJugadorPermitido))
         {
             jugadorCerca = false;
+            if (interactPrompt != null) interactPrompt.SetActive(false);
         }
     }
 }
