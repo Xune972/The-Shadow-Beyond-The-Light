@@ -9,6 +9,9 @@ public class PuertaCorrediza : MonoBehaviour
     public float velocidad = 3.0f;
     public KeyCode teclaInteraccion = KeyCode.E;
 
+    [Header("Cartel (opcional)")]
+    [SerializeField] private GameObject interactPrompt;
+
     [Header("Sonidos")]
     [SerializeField] private AudioClip openClip;
     [SerializeField] private AudioClip closeClip;
@@ -27,6 +30,7 @@ public class PuertaCorrediza : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         audioSource.playOnAwake = false;
+        if (interactPrompt != null) interactPrompt.SetActive(false);
     }
 
     void Start()
@@ -77,6 +81,8 @@ public class PuertaCorrediza : MonoBehaviour
             {
                 jugadorCerca = true;
 
+                if (interactPrompt != null) interactPrompt.SetActive(true);
+
                 if (touchClip != null)
                     audioSource.PlayOneShot(touchClip, volume);
             }
@@ -91,6 +97,8 @@ public class PuertaCorrediza : MonoBehaviour
             if (character != null)
             {
                 jugadorCerca = false;
+
+                if (interactPrompt != null) interactPrompt.SetActive(false);
             }
         }
     }
